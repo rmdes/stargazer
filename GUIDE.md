@@ -100,9 +100,9 @@ To also update GitHub Lists:
 uv run stargazer publish --resume     # Assigns new repos to existing lists
 ```
 
-## Automated Updates (CI/CD)
+## Manual Updates via GitHub Actions
 
-This repo includes a GitHub Actions workflow (`.github/workflows/update.yml`) that can automatically update your stars on a schedule.
+This repo includes a GitHub Actions workflow (`.github/workflows/update.yml`) that you can trigger manually to update your stars from the GitHub UI.
 
 ### Setup
 
@@ -115,18 +115,15 @@ Add these secrets to your fork's repository settings (**Settings > Secrets and v
 
 ### How it works
 
-The workflow runs weekly (every Monday at 6 AM UTC) and can also be triggered manually. It:
+Go to **Actions > Update Stars > Run workflow** to trigger an update. The workflow:
 
-1. Fetches new stars incrementally
-2. Classifies any unclassified repos
-3. Regenerates the README
-4. Commits and pushes if there are changes
+1. Restores cached data from previous runs
+2. Fetches new stars incrementally
+3. Classifies any unclassified repos using Claude API
+4. Regenerates the README
+5. Commits and pushes if there are changes
 
-You can customize the schedule by editing the `cron` expression in `.github/workflows/update.yml`.
-
-### Manual trigger
-
-Go to **Actions > Update Stars > Run workflow** to trigger an update manually.
+> **Note:** The first run has no cache, so it fetches and classifies all your stars from scratch. Subsequent runs are incremental — only new stars are processed.
 
 ## Customizing Your Taxonomy
 
