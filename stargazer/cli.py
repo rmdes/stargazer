@@ -94,6 +94,7 @@ def classify(
 def publish(
     delay: float = typer.Option(1.0, help="Seconds between GitHub API mutations"),
     skip_lists: bool = typer.Option(False, help="Skip GitHub Lists, only generate README"),
+    resume: bool = typer.Option(False, help="Resume assignment using existing lists"),
     readme_path: str = typer.Option("README.md", help="Output path for generated README"),
 ):
     """Publish taxonomy to GitHub Lists and README."""
@@ -125,15 +126,27 @@ def publish(
         mgr = GitHubListsManager(token=token, delay=delay)
         top_slugs = GitHubListsManager.pick_top_categories(classifications, limit=32)
 
-        console.print(f"\n[bold]Top 32 categories for GitHub Lists:[/]")
-        for i, slug in enumerate(top_slugs, 1):
-            console.print(f"  {i:2d}. {slug}")
+        if resume:
+            existing = mgr.get_existing_lists()
+            name_to_id = {lst["name"]: lst["id"] for lst in existing}
+            cats = {c["slug"]: c for c in taxonomy_mgr.data["categories"]}
+            list_ids = {}
+            for slug in top_slugs:
+                cat_name = cats.get(slug, {}).get("name", slug)
+                if cat_name in name_to_id:
+                    list_ids[slug] = name_to_id[cat_name]
+            console.print(f"[green]Resuming:[/] Found {len(list_ids)}/{len(top_slugs)} existing lists")
+        else:
+            console.print(f"\n[bold]Top 32 categories for GitHub Lists:[/]")
+            for i, slug in enumerate(top_slugs, 1):
+                console.print(f"  {i:2d}. {slug}")
 
-        if not typer.confirm("\nProceed? This will DELETE all existing lists and create new ones."):
-            raise typer.Exit(0)
+            if not typer.confirm("\nProceed? This will DELETE all existing lists and create new ones."):
+                raise typer.Exit(0)
 
-        mgr.delete_all_lists()
-        list_ids = mgr.create_lists(taxonomy_mgr.data, top_slugs)
+            mgr.delete_all_lists()
+            list_ids = mgr.create_lists(taxonomy_mgr.data, top_slugs)
+
         assignments = GitHubListsManager.build_assignments(classifications, stars, list_ids)
         mgr.assign_repos(assignments)
         console.print(f"[green]Lists updated![/] {len(assignments)} repos assigned to {len(list_ids)} lists")

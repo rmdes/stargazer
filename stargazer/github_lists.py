@@ -1,5 +1,7 @@
 from collections import Counter
 
+import time
+
 import httpx
 from rich.console import Console
 from rich.progress import Progress, SpinnerColumn, TextColumn, BarColumn
@@ -37,25 +39,47 @@ class GitHubListsManager:
         self.token = token
         self.limiter = RateLimiter(min_delay=delay)
 
-    def _graphql(self, query: str, variables: dict | None = None) -> dict:
+    RETRYABLE_ERRORS = {"RESOURCE_LIMITS_EXCEEDED", "SERVICE_UNAVAILABLE", "LOADING"}
+
+    def _graphql(self, query: str, variables: dict | None = None, retries: int = 5) -> dict:
         self.limiter.wait()
         payload = {"query": query}
         if variables:
             payload["variables"] = variables
-        resp = httpx.post(
-            "https://api.github.com/graphql",
-            json=payload,
-            headers={
-                "Authorization": f"Bearer {self.token}",
-                "Content-Type": "application/json",
-            },
-            timeout=30.0,
-        )
-        resp.raise_for_status()
-        data = resp.json()
-        if "errors" in data:
-            raise RuntimeError(f"GraphQL error: {data['errors']}")
-        return data
+        for attempt in range(retries):
+            resp = httpx.post(
+                "https://api.github.com/graphql",
+                json=payload,
+                headers={
+                    "Authorization": f"Bearer {self.token}",
+                    "Content-Type": "application/json",
+                },
+                timeout=30.0,
+            )
+            if resp.status_code >= 500 and attempt < retries - 1:
+                wait = 2 ** attempt * 3
+                console.print(f"  [yellow]GitHub {resp.status_code}, retrying in {wait}s...[/]")
+                time.sleep(wait)
+                continue
+            resp.raise_for_status()
+            data = resp.json()
+            if "errors" in data:
+                errors = [e for e in data["errors"] if isinstance(e, dict)]
+                error_types = {e.get("type", "") for e in errors}
+                messages = " ".join(e.get("message", "") for e in errors)
+                is_retryable = (
+                    bool(error_types & self.RETRYABLE_ERRORS)
+                    or "something went wrong" in messages.lower()
+                )
+                if is_retryable and attempt < retries - 1:
+                    wait = 2 ** attempt * 5
+                    label = (error_types - {""}).pop() if error_types - {""} else "Server error"
+                    console.print(f"  [yellow]{label}, retrying in {wait}s...[/]")
+                    time.sleep(wait)
+                    continue
+                raise RuntimeError(f"GraphQL error: {data['errors']}")
+            return data
+        raise RuntimeError("Max retries exceeded")
 
     def get_existing_lists(self) -> list[dict]:
         data = self._graphql(GET_LISTS)
@@ -67,8 +91,14 @@ class GitHubListsManager:
             return
         console.print(f"Deleting {len(lists)} existing lists...")
         for lst in lists:
-            self._graphql(DELETE_LIST, {"listId": lst["id"]})
-            console.print(f"  Deleted: {lst['name']}")
+            try:
+                self._graphql(DELETE_LIST, {"listId": lst["id"]})
+                console.print(f"  Deleted: {lst['name']}")
+            except RuntimeError as e:
+                if "NOT_FOUND" in str(e):
+                    console.print(f"  [dim]Already deleted: {lst['name']}[/]")
+                else:
+                    raise
 
     def create_lists(self, taxonomy: dict, top_slugs: list[str]) -> dict[str, str]:
         slug_to_id = {}
@@ -89,6 +119,7 @@ class GitHubListsManager:
 
     def assign_repos(self, assignments: dict[str, list[str]]):
         total = len(assignments)
+        failed = 0
         with Progress(
             SpinnerColumn(),
             TextColumn("[progress.description]{task.description}"),
@@ -98,8 +129,13 @@ class GitHubListsManager:
             task = progress.add_task("Assigning repos to lists...", total=total)
             for node_id, list_ids in assignments.items():
                 if list_ids:
-                    self._graphql(UPDATE_ITEM_LISTS, {"itemId": node_id, "listIds": list_ids})
+                    try:
+                        self._graphql(UPDATE_ITEM_LISTS, {"itemId": node_id, "listIds": list_ids})
+                    except RuntimeError:
+                        failed += 1
                 progress.advance(task)
+        if failed:
+            console.print(f"  [yellow]{failed} repos failed to assign (transient errors)[/]")
 
     @staticmethod
     def pick_top_categories(classifications: dict[str, dict], limit: int = 32) -> list[str]:

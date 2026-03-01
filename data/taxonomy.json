@@ -1,0 +1,605 @@
+{
+  "categories": [
+    {
+      "name": "AI & Machine Learning",
+      "slug": "ai-ml",
+      "description": "Large language models, generative AI, neural networks, and machine learning frameworks.",
+      "subcategories": [
+        {
+          "name": "LLM Frameworks",
+          "slug": "llm-frameworks"
+        },
+        {
+          "name": "Computer Vision",
+          "slug": "computer-vision"
+        },
+        {
+          "name": "AI Assistants",
+          "slug": "ai-assistants"
+        },
+        {
+          "name": "Model Compression",
+          "slug": "model-compression"
+        }
+      ]
+    },
+    {
+      "name": "Decentralized & Web3",
+      "slug": "decentralized-web3",
+      "description": "Blockchain, cryptocurrencies, IPFS, and decentralized protocols.",
+      "subcategories": [
+        {
+          "name": "Blockchain",
+          "slug": "blockchain"
+        },
+        {
+          "name": "IPFS & Content Addressing",
+          "slug": "ipfs-content"
+        },
+        {
+          "name": "Ethereum",
+          "slug": "ethereum"
+        }
+      ]
+    },
+    {
+      "name": "Fediverse & ActivityPub",
+      "slug": "fediverse",
+      "description": "Mastodon, Bluesky, ActivityPub servers, and decentralized social networks.",
+      "subcategories": [
+        {
+          "name": "Mastodon Tools",
+          "slug": "mastodon-tools"
+        },
+        {
+          "name": "Bluesky & ATProto",
+          "slug": "bluesky-atproto"
+        },
+        {
+          "name": "ActivityPub Implementation",
+          "slug": "activitypub"
+        }
+      ]
+    },
+    {
+      "name": "IndieWeb",
+      "slug": "indieweb",
+      "description": "Micropub, Microformats, personal websites, and self-hosted publishing.",
+      "subcategories": [
+        {
+          "name": "Micropub Servers",
+          "slug": "micropub"
+        },
+        {
+          "name": "Blog Platforms",
+          "slug": "blog-platforms"
+        },
+        {
+          "name": "Readers & Aggregators",
+          "slug": "readers-aggregators"
+        }
+      ]
+    },
+    {
+      "name": "DevOps & Infrastructure",
+      "slug": "devops",
+      "description": "CI/CD, container orchestration, infrastructure-as-code, and deployment automation.",
+      "subcategories": [
+        {
+          "name": "Kubernetes",
+          "slug": "kubernetes"
+        },
+        {
+          "name": "Docker & Containers",
+          "slug": "docker-containers"
+        },
+        {
+          "name": "CI/CD Pipelines",
+          "slug": "ci-cd"
+        },
+        {
+          "name": "Infrastructure as Code",
+          "slug": "iac"
+        },
+        {
+          "name": "GitOps",
+          "slug": "gitops"
+        }
+      ]
+    },
+    {
+      "name": "Monitoring & Observability",
+      "slug": "monitoring",
+      "description": "System monitoring, logging, metrics collection, and performance tracking.",
+      "subcategories": [
+        {
+          "name": "Time Series Databases",
+          "slug": "time-series-db"
+        },
+        {
+          "name": "Log Aggregation",
+          "slug": "log-aggregation"
+        },
+        {
+          "name": "Metrics & Dashboards",
+          "slug": "metrics-dashboards"
+        },
+        {
+          "name": "Incident Management",
+          "slug": "incident-management"
+        }
+      ]
+    },
+    {
+      "name": "Security & Privacy",
+      "slug": "security",
+      "description": "Encryption, vulnerability scanning, penetration testing, and security tools.",
+      "subcategories": [
+        {
+          "name": "Secret Management",
+          "slug": "secret-management"
+        },
+        {
+          "name": "Vulnerability Scanning",
+          "slug": "vuln-scanning"
+        },
+        {
+          "name": "Penetration Testing",
+          "slug": "pentest"
+        },
+        {
+          "name": "OSINT Tools",
+          "slug": "osint"
+        }
+      ]
+    },
+    {
+      "name": "Web Framework & APIs",
+      "slug": "web-framework",
+      "description": "Web servers, HTTP clients, REST APIs, and web standards.",
+      "subcategories": [
+        {
+          "name": "Lightweight Frameworks",
+          "slug": "lightweight-fw"
+        },
+        {
+          "name": "API Proxies",
+          "slug": "api-proxies"
+        },
+        {
+          "name": "HTTP Clients",
+          "slug": "http-clients"
+        },
+        {
+          "name": "API Gateways",
+          "slug": "api-gateways"
+        }
+      ]
+    },
+    {
+      "name": "Static Site & Jamstack",
+      "slug": "jamstack",
+      "description": "Static site generators, JAMstack frameworks, and site optimizers.",
+      "subcategories": [
+        {
+          "name": "Site Generators",
+          "slug": "site-generators"
+        },
+        {
+          "name": "Optimization Tools",
+          "slug": "optimization"
+        },
+        {
+          "name": "Jamstack Templates",
+          "slug": "jamstack-templates"
+        }
+      ]
+    },
+    {
+      "name": "Content & Publishing",
+      "slug": "content-publishing",
+      "description": "RSS feeds, content syndication, blogging, and media management.",
+      "subcategories": [
+        {
+          "name": "RSS Tools",
+          "slug": "rss-tools"
+        },
+        {
+          "name": "Feed Readers",
+          "slug": "feed-readers"
+        },
+        {
+          "name": "Content Syndication",
+          "slug": "syndication"
+        }
+      ]
+    },
+    {
+      "name": "Data & Search",
+      "slug": "data-search",
+      "description": "Search engines, vector databases, data visualization, and analytics.",
+      "subcategories": [
+        {
+          "name": "Vector Databases",
+          "slug": "vector-db"
+        },
+        {
+          "name": "Data Visualization",
+          "slug": "data-viz"
+        },
+        {
+          "name": "Analytics Platforms",
+          "slug": "analytics"
+        },
+        {
+          "name": "Data Curation",
+          "slug": "data-curation"
+        }
+      ]
+    },
+    {
+      "name": "Desktop & UI",
+      "slug": "desktop-ui",
+      "description": "Desktop applications, UI frameworks, icon packs, and window managers.",
+      "subcategories": [
+        {
+          "name": "Desktop Applications",
+          "slug": "desktop-apps"
+        },
+        {
+          "name": "UI Components",
+          "slug": "ui-components"
+        },
+        {
+          "name": "Design Systems",
+          "slug": "design-systems"
+        },
+        {
+          "name": "Icon Packs",
+          "slug": "icon-packs"
+        }
+      ]
+    },
+    {
+      "name": "Mobile Development",
+      "slug": "mobile",
+      "description": "iOS, Android, React Native, and cross-platform mobile development.",
+      "subcategories": [
+        {
+          "name": "React Native",
+          "slug": "react-native"
+        },
+        {
+          "name": "Flutter",
+          "slug": "flutter"
+        },
+        {
+          "name": "Android Apps",
+          "slug": "android"
+        }
+      ]
+    },
+    {
+      "name": "Chat & Communication",
+      "slug": "chat-communication",
+      "description": "Chat applications, messaging bots, and real-time communication.",
+      "subcategories": [
+        {
+          "name": "Chat Platforms",
+          "slug": "chat-platforms"
+        },
+        {
+          "name": "Telegram Bots",
+          "slug": "telegram-bots"
+        },
+        {
+          "name": "IRC Tools",
+          "slug": "irc-tools"
+        },
+        {
+          "name": "Voice & Audio",
+          "slug": "voice-audio"
+        }
+      ]
+    },
+    {
+      "name": "File Transfer & Storage",
+      "slug": "file-transfer",
+      "description": "File sharing, cloud storage, backup tools, and file management.",
+      "subcategories": [
+        {
+          "name": "File Sharing",
+          "slug": "file-sharing"
+        },
+        {
+          "name": "Backup Tools",
+          "slug": "backup"
+        },
+        {
+          "name": "Self-Hosted Storage",
+          "slug": "self-hosted-storage"
+        }
+      ]
+    },
+    {
+      "name": "Terminal & CLI Tools",
+      "slug": "terminal-cli",
+      "description": "Command-line utilities, shell improvements, and terminal applications.",
+      "subcategories": [
+        {
+          "name": "Navigation Tools",
+          "slug": "navigation"
+        },
+        {
+          "name": "Shell Utilities",
+          "slug": "shell-utils"
+        },
+        {
+          "name": "TUI Applications",
+          "slug": "tui-apps"
+        },
+        {
+          "name": "Productivity CLI",
+          "slug": "productivity-cli"
+        }
+      ]
+    },
+    {
+      "name": "Package Management",
+      "slug": "package-management",
+      "description": "Dependency management, version control, and package distribution.",
+      "subcategories": [
+        {
+          "name": "Language Package Managers",
+          "slug": "lang-pkg-mgr"
+        },
+        {
+          "name": "Dependency Automation",
+          "slug": "dependency-automation"
+        }
+      ]
+    },
+    {
+      "name": "Automation & Workflow",
+      "slug": "automation",
+      "description": "Task automation, workflow engines, and orchestration platforms.",
+      "subcategories": [
+        {
+          "name": "Workflow Engines",
+          "slug": "workflow-engines"
+        },
+        {
+          "name": "N8n Integrations",
+          "slug": "n8n"
+        },
+        {
+          "name": "Task Automation",
+          "slug": "task-automation"
+        }
+      ]
+    },
+    {
+      "name": "Business & ERP",
+      "slug": "business-erp",
+      "description": "Enterprise resource planning, CRM, invoicing, and business management.",
+      "subcategories": [
+        {
+          "name": "ERP Systems",
+          "slug": "erp"
+        },
+        {
+          "name": "Financial Tools",
+          "slug": "financial"
+        }
+      ]
+    },
+    {
+      "name": "Development Tools",
+      "slug": "dev-tools",
+      "description": "Code editors, IDEs, testing frameworks, and development utilities.",
+      "subcategories": [
+        {
+          "name": "Testing & QA",
+          "slug": "testing-qa"
+        },
+        {
+          "name": "Build Tools",
+          "slug": "build-tools"
+        },
+        {
+          "name": "Documentation",
+          "slug": "documentation"
+        }
+      ]
+    },
+    {
+      "name": "Education & Learning",
+      "slug": "education",
+      "description": "Online courses, tutorials, learning platforms, and educational content.",
+      "subcategories": [
+        {
+          "name": "Programming Courses",
+          "slug": "programming-courses"
+        },
+        {
+          "name": "Learning Platforms",
+          "slug": "learning-platforms"
+        }
+      ]
+    },
+    {
+      "name": "Multimedia & Graphics",
+      "slug": "multimedia",
+      "description": "Image processing, video editing, audio tools, and media utilities.",
+      "subcategories": [
+        {
+          "name": "Image Processing",
+          "slug": "image-processing"
+        },
+        {
+          "name": "Video Tools",
+          "slug": "video-tools"
+        },
+        {
+          "name": "Audio Tools",
+          "slug": "audio-tools"
+        }
+      ]
+    },
+    {
+      "name": "Embedded & IoT",
+      "slug": "embedded-iot",
+      "description": "Embedded systems, microcontrollers, firmware, and IoT devices.",
+      "subcategories": [
+        {
+          "name": "Firmware",
+          "slug": "firmware"
+        },
+        {
+          "name": "Microcontrollers",
+          "slug": "microcontrollers"
+        }
+      ]
+    },
+    {
+      "name": "Music & Media",
+      "slug": "music-media",
+      "description": "Music streaming, podcast management, and media players.",
+      "subcategories": [
+        {
+          "name": "Music Players",
+          "slug": "music-players"
+        },
+        {
+          "name": "Podcast Tools",
+          "slug": "podcast-tools"
+        }
+      ]
+    },
+    {
+      "name": "Social Media Tools",
+      "slug": "social-media",
+      "description": "Twitter tools, social media management, and content distribution.",
+      "subcategories": [
+        {
+          "name": "Twitter Tools",
+          "slug": "twitter-tools"
+        },
+        {
+          "name": "Social Media Analytics",
+          "slug": "social-analytics"
+        }
+      ]
+    },
+    {
+      "name": "Internet Archive & Preservation",
+      "slug": "archive-preservation",
+      "description": "Web archiving, data preservation, and historical records.",
+      "subcategories": [
+        {
+          "name": "Web Crawlers",
+          "slug": "web-crawlers"
+        },
+        {
+          "name": "Archive Tools",
+          "slug": "archive-tools"
+        }
+      ]
+    },
+    {
+      "name": "Utilities & Tools",
+      "slug": "utilities",
+      "description": "General-purpose utilities, conversion tools, and system applications.",
+      "subcategories": [
+        {
+          "name": "Conversion Tools",
+          "slug": "conversion-tools"
+        },
+        {
+          "name": "System Utilities",
+          "slug": "system-utilities"
+        },
+        {
+          "name": "Data Tools",
+          "slug": "data-tools"
+        }
+      ]
+    },
+    {
+      "name": "Home Server & Self-Hosted",
+      "slug": "home-server",
+      "description": "Self-hosted applications, home automation, and personal servers.",
+      "subcategories": [
+        {
+          "name": "Home Pages & Dashboards",
+          "slug": "home-dashboards"
+        },
+        {
+          "name": "Self-Hosted Apps",
+          "slug": "self-hosted-apps"
+        },
+        {
+          "name": "Media Servers",
+          "slug": "media-servers"
+        }
+      ]
+    },
+    {
+      "name": "Model Context Protocol",
+      "slug": "mcp",
+      "description": "MCP servers, adapters, and integrations for AI model context.",
+      "subcategories": [
+        {
+          "name": "MCP Servers",
+          "slug": "mcp-servers"
+        },
+        {
+          "name": "MCP Adapters",
+          "slug": "mcp-adapters"
+        }
+      ]
+    },
+    {
+      "name": "Cloud & Serverless",
+      "slug": "cloud-serverless",
+      "description": "Serverless computing, cloud platforms, and edge computing.",
+      "subcategories": [
+        {
+          "name": "Cloudflare Workers",
+          "slug": "cloudflare-workers"
+        },
+        {
+          "name": "Deployment Platforms",
+          "slug": "deployment-platforms"
+        }
+      ]
+    },
+    {
+      "name": "Fitness & Health",
+      "slug": "fitness-health",
+      "description": "Fitness tracking, health monitoring, and wellness applications.",
+      "subcategories": []
+    },
+    {
+      "name": "Windows Integration",
+      "slug": "windows-integration",
+      "description": "Running Windows applications on Linux and cross-platform solutions.",
+      "subcategories": []
+    },
+    {
+      "name": "Email & Calendar",
+      "slug": "email-calendar",
+      "description": "Email clients, calendar management, and contact management.",
+      "subcategories": [
+        {
+          "name": "Email Clients",
+          "slug": "email-clients"
+        },
+        {
+          "name": "Email Servers",
+          "slug": "email-servers"
+        }
+      ]
+    }
+  ]
+}
