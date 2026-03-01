@@ -88,9 +88,57 @@ def classify(
 
 
 @app.command()
-def publish():
+def publish(
+    delay: float = typer.Option(1.0, help="Seconds between GitHub API mutations"),
+    skip_lists: bool = typer.Option(False, help="Skip GitHub Lists, only generate README"),
+    readme_path: str = typer.Option("README.md", help="Output path for generated README"),
+):
     """Publish taxonomy to GitHub Lists and README."""
-    typer.echo("publish: not yet implemented")
+    from stargazer.fetcher import STARS_FILE
+    from stargazer.taxonomy import TaxonomyManager
+    from stargazer.classifier import CLASSIFICATIONS_FILE
+    from stargazer.github_lists import GitHubListsManager
+    from stargazer.renderer import render_readme
+
+    if not STARS_FILE.exists() or not CLASSIFICATIONS_FILE.exists():
+        console.print("[red]Error:[/] Run 'stargazer fetch' and 'stargazer classify' first.")
+        raise typer.Exit(1)
+
+    taxonomy_mgr = TaxonomyManager.load()
+    if taxonomy_mgr is None:
+        console.print("[red]Error:[/] No taxonomy found. Run 'stargazer classify' first.")
+        raise typer.Exit(1)
+
+    stars = json.loads(STARS_FILE.read_text())
+    classifications = json.loads(CLASSIFICATIONS_FILE.read_text())
+
+    # GitHub Lists
+    if not skip_lists:
+        token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
+        if not token:
+            console.print("[red]Error:[/] Set GITHUB_TOKEN or GH_TOKEN environment variable")
+            raise typer.Exit(1)
+
+        mgr = GitHubListsManager(token=token, delay=delay)
+        top_slugs = GitHubListsManager.pick_top_categories(classifications, limit=32)
+
+        console.print(f"\n[bold]Top 32 categories for GitHub Lists:[/]")
+        for i, slug in enumerate(top_slugs, 1):
+            console.print(f"  {i:2d}. {slug}")
+
+        if not typer.confirm("\nProceed? This will DELETE all existing lists and create new ones."):
+            raise typer.Exit(0)
+
+        mgr.delete_all_lists()
+        list_ids = mgr.create_lists(taxonomy_mgr.data, top_slugs)
+        assignments = GitHubListsManager.build_assignments(classifications, stars, list_ids)
+        mgr.assign_repos(assignments)
+        console.print(f"[green]Lists updated![/] {len(assignments)} repos assigned to {len(list_ids)} lists")
+
+    # README
+    readme = render_readme(taxonomy_mgr.data, stars, classifications)
+    Path(readme_path).write_text(readme)
+    console.print(f"[green]README generated![/] {readme_path}")
 
 
 if __name__ == "__main__":
