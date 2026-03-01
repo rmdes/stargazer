@@ -39,6 +39,8 @@ def render_readme(taxonomy: dict, stars: list[dict], classifications: dict[str, 
 
     # Category sections
     for cat in taxonomy["categories"]:
+        lines.append(f"<a id=\"{cat['slug']}\"></a>")
+        lines.append("")
         lines.append(f"## {cat['name']}")
         if cat.get("description"):
             lines.append(f"_{cat['description']}_")
@@ -57,6 +59,8 @@ def render_readme(taxonomy: dict, stars: list[dict], classifications: dict[str, 
         for sub in cat.get("subcategories", []):
             sub_repos = cat_repos.get(sub["slug"], [])
             if sub_repos:
+                lines.append(f"<a id=\"{sub['slug']}\"></a>")
+                lines.append("")
                 lines.append(f"### {sub['name']}")
                 lines.append("")
                 for fn in sorted(sub_repos):
