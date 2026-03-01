@@ -3,7 +3,10 @@ import os
 from pathlib import Path
 
 import typer
+from dotenv import load_dotenv
 from rich.console import Console
+
+load_dotenv()
 
 app = typer.Typer(help="Auto-sorting CLI for GitHub starred repos")
 console = Console()
