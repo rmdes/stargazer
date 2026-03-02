@@ -34,6 +34,7 @@ def fetch(
 def classify(
     batch_size: int = typer.Option(20, help="Repos per Claude API call"),
     delay: float = typer.Option(2.0, help="Seconds between Claude API calls"),
+    full: bool = typer.Option(False, help="Ignore cache, reclassify all repos"),
 ):
     """Classify repos into taxonomy using Claude API."""
     from stargazer.fetcher import STARS_FILE
@@ -86,7 +87,7 @@ def classify(
         batch_size=batch_size,
         delay=delay,
     )
-    classifications = classifier.classify_all(stars)
+    classifications = classifier.classify_all(stars, full=full)
     console.print(f"[green]Done![/] {len(classifications)} repos classified")
 
 

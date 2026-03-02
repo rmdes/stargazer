@@ -37,8 +37,8 @@ class Classifier:
         self.batch_size = batch_size
         self.limiter = RateLimiter(min_delay=delay)
 
-    def classify_all(self, stars: list[dict]) -> dict[str, dict]:
-        existing = self._load_existing()
+    def classify_all(self, stars: list[dict], full: bool = False) -> dict[str, dict]:
+        existing = {} if full else self._load_existing()
         unclassified = [s for s in stars if s["full_name"] not in existing]
 
         if not unclassified:
