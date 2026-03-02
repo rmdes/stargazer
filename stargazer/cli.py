@@ -158,5 +158,82 @@ def publish(
     console.print(f"[green]README generated![/] {readme_path}")
 
 
+@app.command()
+def audit(
+    sample: int = typer.Option(0, help="Audit random sample of N repos (0 = all)"),
+    batch_size: int = typer.Option(20, help="Repos per Claude API call"),
+    delay: float = typer.Option(2.0, help="Seconds between Claude API calls"),
+    category: str = typer.Option("", help="Only audit repos in this category slug"),
+    auto_accept: bool = typer.Option(False, help="Accept all suggestions without review"),
+):
+    """Audit classifications for correctness using Claude."""
+    import random
+    from stargazer.fetcher import STARS_FILE
+    from stargazer.taxonomy import TaxonomyManager
+    from stargazer.classifier import CLASSIFICATIONS_FILE
+    from stargazer.auditor import Auditor, review_disagreements
+
+    if not STARS_FILE.exists() or not CLASSIFICATIONS_FILE.exists():
+        console.print("[red]Error:[/] Run 'stargazer fetch' and 'stargazer classify' first.")
+        raise typer.Exit(1)
+
+    taxonomy_mgr = TaxonomyManager.load()
+    if taxonomy_mgr is None:
+        console.print("[red]Error:[/] No taxonomy found. Run 'stargazer classify' first.")
+        raise typer.Exit(1)
+
+    api_key = os.environ.get("ANTHROPIC_API_KEY")
+    if not api_key:
+        console.print("[red]Error:[/] Set ANTHROPIC_API_KEY environment variable")
+        raise typer.Exit(1)
+
+    stars = json.loads(STARS_FILE.read_text())
+    classifications = json.loads(CLASSIFICATIONS_FILE.read_text())
+
+    # Build lookup for star data
+    stars_by_name = {s["full_name"]: s for s in stars}
+
+    # Filter to classified repos that we have star data for
+    repos_to_audit = [
+        stars_by_name[name] for name in classifications
+        if name in stars_by_name
+    ]
+
+    # Filter by category if specified
+    if category:
+        repos_to_audit = [
+            r for r in repos_to_audit
+            if classifications.get(r["full_name"], {}).get("primary") == category
+        ]
+        if not repos_to_audit:
+            console.print(f"[yellow]No repos found in category '{category}'[/]")
+            raise typer.Exit(0)
+
+    # Sample if requested
+    if sample > 0 and sample < len(repos_to_audit):
+        repos_to_audit = random.sample(repos_to_audit, sample)
+
+    # Cost warning for large audits
+    if len(repos_to_audit) > 200 and not auto_accept:
+        n_batches = (len(repos_to_audit) + batch_size - 1) // batch_size
+        console.print(
+            f"[yellow]Warning:[/] Auditing {len(repos_to_audit)} repos "
+            f"({n_batches} API calls). Consider using --sample to limit."
+        )
+        if not typer.confirm("Continue?"):
+            raise typer.Exit(0)
+
+    console.print(f"Auditing {len(repos_to_audit)} repos...")
+
+    auditor = Auditor(
+        api_key=api_key,
+        taxonomy=taxonomy_mgr.data,
+        batch_size=batch_size,
+        delay=delay,
+    )
+    disagreements = auditor.audit_repos(repos_to_audit, classifications)
+    review_disagreements(disagreements, classifications, auto_accept=auto_accept)
+
+
 if __name__ == "__main__":
     app()

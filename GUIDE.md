@@ -42,7 +42,7 @@ GH_TOKEN=ghp_...
 
 ## Usage
 
-Stargazer has three commands that run in sequence:
+Stargazer has four commands:
 
 ### 1. Fetch your stars
 
@@ -83,6 +83,31 @@ Options:
 - `--skip-lists` — only regenerate the README, skip GitHub Lists
 - `--resume` — reuse existing lists, only re-assign repos (useful if a previous run was interrupted)
 - `--readme-path README.md` — output path for the README
+
+### 4. Audit classifications
+
+```bash
+uv run stargazer audit --sample 5
+```
+
+Re-evaluates existing classifications using Claude to catch misclassifications. Sends repos with their current category back to Claude and asks "is this correct?". Disagreements are shown interactively so you can accept or reject each suggestion.
+
+Options:
+- `--sample N` — audit a random sample of N repos (default: 0 = all)
+- `--batch-size 20` — repos per Claude API call (default: 20)
+- `--delay 2.0` — seconds between API calls (default: 2.0)
+- `--category slug` — only audit repos in a specific category
+- `--auto-accept` — accept all suggestions without interactive review
+
+During interactive review:
+- `a` — accept this suggestion
+- `r` — reject this suggestion
+- `s` — skip (decide later)
+- `A` — accept all remaining
+- `R` — reject all remaining
+- `q` — quit review
+
+Accepted changes are saved to `data/classifications.json` immediately. Run `publish --skip-lists` afterward to update the README.
 
 ## Incremental Updates
 
