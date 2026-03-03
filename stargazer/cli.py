@@ -170,6 +170,7 @@ def audit(
     delay: float = typer.Option(2.0, help="Seconds between Claude API calls"),
     category: str = typer.Option("", help="Only audit repos in this category slug"),
     auto_accept: bool = typer.Option(False, help="Accept all suggestions without review"),
+    dry_run: bool = typer.Option(False, help="Show suggestions without saving changes"),
 ):
     """Audit classifications for correctness using Claude."""
     import random
@@ -237,7 +238,7 @@ def audit(
         delay=delay,
     )
     disagreements = auditor.audit_repos(repos_to_audit, classifications)
-    review_disagreements(disagreements, classifications, auto_accept=auto_accept)
+    review_disagreements(disagreements, classifications, auto_accept=auto_accept, dry_run=dry_run)
 
 
 if __name__ == "__main__":

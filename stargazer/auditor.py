@@ -113,6 +113,7 @@ def review_disagreements(
     disagreements: list[dict],
     classifications: dict[str, dict],
     auto_accept: bool = False,
+    dry_run: bool = False,
 ) -> int:
     """Interactive review of audit disagreements. Returns count of accepted changes."""
     if not disagreements:
@@ -120,6 +121,18 @@ def review_disagreements(
         return 0
 
     console.print(f"\n[bold]Found {len(disagreements)} potential misclassification(s)[/]\n")
+
+    if dry_run:
+        for i, d in enumerate(disagreements, 1):
+            table = Table(title=f"[{i}/{len(disagreements)}] {d['full_name']}", show_header=False)
+            table.add_column("Field", style="bold")
+            table.add_column("Value")
+            table.add_row("Current", d.get("current_primary", "unknown"))
+            table.add_row("Suggested", d.get("suggested_primary", "?"))
+            table.add_row("Reason", d.get("reason", ""))
+            console.print(table)
+        console.print(f"\n[dim]Dry run — no changes saved[/]")
+        return 0
 
     accepted = 0
     for i, d in enumerate(disagreements, 1):

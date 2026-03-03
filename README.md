@@ -8,61 +8,61 @@
 
 ## Table of Contents
 
-- [AI & Machine Learning](#ai-ml) (263)
-  - [LLM Frameworks](#llm-frameworks) (156)
+- [AI & Machine Learning](#ai-ml) (264)
+  - [LLM Frameworks](#llm-frameworks) (159)
   - [Computer Vision](#computer-vision) (68)
-  - [AI Assistants](#ai-assistants) (255)
+  - [AI Assistants](#ai-assistants) (259)
   - [Model Compression](#model-compression) (5)
-- [Decentralized & Web3](#decentralized-web3) (82)
+- [Decentralized & Web3](#decentralized-web3) (84)
   - [Blockchain](#blockchain) (36)
   - [IPFS & Content Addressing](#ipfs-content) (8)
   - [Ethereum](#ethereum) (25)
 - [Fediverse & ActivityPub](#fediverse) (111)
   - [Mastodon Tools](#mastodon-tools) (71)
-  - [Bluesky & ATProto](#bluesky-atproto) (127)
+  - [Bluesky & ATProto](#bluesky-atproto) (129)
   - [ActivityPub Implementation](#activitypub) (62)
 - [IndieWeb](#indieweb) (143)
   - [Micropub Servers](#micropub) (18)
-  - [Blog Platforms](#blog-platforms) (49)
+  - [Blog Platforms](#blog-platforms) (52)
   - [Readers & Aggregators](#readers-aggregators) (38)
 - [DevOps & Infrastructure](#devops) (357)
   - [Kubernetes](#kubernetes) (141)
-  - [Docker & Containers](#docker-containers) (241)
+  - [Docker & Containers](#docker-containers) (246)
   - [CI/CD Pipelines](#ci-cd) (35)
-  - [Infrastructure as Code](#iac) (82)
+  - [Infrastructure as Code](#iac) (84)
   - [GitOps](#gitops) (28)
 - [Monitoring & Observability](#monitoring) (203)
   - [Time Series Databases](#time-series-db) (14)
   - [Log Aggregation](#log-aggregation) (24)
   - [Metrics & Dashboards](#metrics-dashboards) (59)
   - [Incident Management](#incident-management) (14)
-- [Security & Privacy](#security) (285)
+- [Security & Privacy](#security) (286)
   - [Secret Management](#secret-management) (33)
   - [Vulnerability Scanning](#vuln-scanning) (10)
   - [Penetration Testing](#pentest) (73)
   - [OSINT Tools](#osint) (94)
-- [Web Framework & APIs](#web-framework) (155)
+- [Web Framework & APIs](#web-framework) (158)
   - [Lightweight Frameworks](#lightweight-fw) (6)
-  - [API Proxies](#api-proxies) (75)
+  - [API Proxies](#api-proxies) (76)
   - [HTTP Clients](#http-clients) (18)
   - [API Gateways](#api-gateways) (70)
 - [Static Site & Jamstack](#jamstack) (20)
   - [Site Generators](#site-generators) (69)
   - [Optimization Tools](#optimization) (11)
-  - [Jamstack Templates](#jamstack-templates) (32)
+  - [Jamstack Templates](#jamstack-templates) (33)
 - [Content & Publishing](#content-publishing) (89)
   - [RSS Tools](#rss-tools) (155)
   - [Feed Readers](#feed-readers) (49)
   - [Content Syndication](#syndication) (20)
 - [Data & Search](#data-search) (63)
   - [Vector Databases](#vector-db) (11)
-  - [Data Visualization](#data-viz) (191)
-  - [Analytics Platforms](#analytics) (75)
+  - [Data Visualization](#data-viz) (192)
+  - [Analytics Platforms](#analytics) (76)
   - [Data Curation](#data-curation) (73)
 - [Desktop & UI](#desktop-ui) (43)
   - [Desktop Applications](#desktop-apps) (172)
-  - [UI Components](#ui-components) (96)
-  - [Design Systems](#design-systems) (57)
+  - [UI Components](#ui-components) (97)
+  - [Design Systems](#design-systems) (58)
   - [Icon Packs](#icon-packs) (4)
 - [Mobile Development](#mobile) (31)
   - [React Native](#react-native) (3)
@@ -85,7 +85,7 @@
 - [Package Management](#package-management) (27)
   - [Language Package Managers](#lang-pkg-mgr) (40)
   - [Dependency Automation](#dependency-automation) (12)
-- [Automation & Workflow](#automation) (302)
+- [Automation & Workflow](#automation) (303)
   - [Workflow Engines](#workflow-engines) (31)
   - [N8n Integrations](#n8n) (38)
   - [Task Automation](#task-automation) (57)
@@ -102,7 +102,7 @@
 - [Multimedia & Graphics](#multimedia) (42)
   - [Image Processing](#image-processing) (59)
   - [Video Tools](#video-tools) (86)
-  - [Audio Tools](#audio-tools) (62)
+  - [Audio Tools](#audio-tools) (63)
 - [Embedded & IoT](#embedded-iot) (45)
   - [Firmware](#firmware) (20)
   - [Microcontrollers](#microcontrollers) (5)
@@ -122,7 +122,7 @@
 - [Home Server & Self-Hosted](#home-server) (38)
   - [Home Pages & Dashboards](#home-dashboards) (48)
   - [Self-Hosted Apps](#self-hosted-apps) (228)
-  - [Media Servers](#media-servers) (60)
+  - [Media Servers](#media-servers) (61)
 - [Model Context Protocol](#mcp) (13)
   - [MCP Servers](#mcp-servers) (46)
   - [MCP Adapters](#mcp-adapters) (5)
@@ -134,7 +134,7 @@
 - [Email & Calendar](#email-calendar) (3)
   - [Email Clients](#email-clients) (23)
   - [Email Servers](#email-servers) (13)
-- [Uncategorized](#uncategorized) (78)
+- [Uncategorized](#uncategorized) (43)
 
 <a id="ai-ml"></a>
 
@@ -381,6 +381,7 @@ _Large language models, generative AI, neural networks, and machine learning fra
 - [streamlit/streamlit](https://github.com/streamlit/streamlit) `Python` -- Streamlit — A faster way to build and share data apps.
 - [supershaneski/openai-whisper-talk](https://github.com/supershaneski/openai-whisper-talk) `JavaScript` -- openai-whisper-talk is a sample voice conversation application powered by OpenAI technologies such as Whisper, Completio
 - [susumuota/arxiv-reddit-summary](https://github.com/susumuota/arxiv-reddit-summary) `Python` -- Summarize the top 30 most popular arXiv papers on Reddit, Hacker News and Hugging Face in the last 30 days. And post the
+- [tankvn/awesome-ai-tools](https://github.com/tankvn/awesome-ai-tools)  -- A curated list of 7766 awesome AI tools
 - [tensorflow/models](https://github.com/tensorflow/models) `Python` -- Models and examples built with TensorFlow
 - [tensorflow/playground](https://github.com/tensorflow/playground) `TypeScript` -- Play with neural networks!
 - [tesseract-ocr/tesseract](https://github.com/tesseract-ocr/tesseract) `C++` -- Tesseract Open Source OCR Engine (main repository)
@@ -440,6 +441,7 @@ _Large language models, generative AI, neural networks, and machine learning fra
 - [SamurAIGPT/GPT-Agent](https://github.com/SamurAIGPT/GPT-Agent) `JavaScript` -- 🚀 Introducing 🐪 CAMEL: a game-changing role-playing approach for LLMs and auto-agents like BabyAGI & AutoGPT! Watch two 
 - [Saraceni/AbletonAiAgent](https://github.com/Saraceni/AbletonAiAgent) `TypeScript` -- This is a repo of an ai agent that help you read and understand ableton live documentation
 - [ServiceStack/llms](https://github.com/ServiceStack/llms) `JavaScript` -- LLM Client, Server API and UI
+- [Shubhamsaboo/awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps) `Python` -- Collection of awesome LLM apps with AI Agents and RAG using OpenAI, Anthropic, Gemini and opensource models.
 - [SonicWarrior1/pdfchat](https://github.com/SonicWarrior1/pdfchat) `Python` -- Local PDF Chat Application with Mistral 7B LLM, Langchain, Ollama, and Streamlit
 - [TilmanGriesel/chipper](https://github.com/TilmanGriesel/chipper) `Python` -- ✨ AI interface for tinkerers (Ollama, Haystack RAG, Python)
 - [TrafficGuard/typedai](https://github.com/TrafficGuard/typedai) `TypeScript` -- TypeScript AI platform with AI chat, Autonomous agents, Software developer agents, chatbots and more
@@ -545,6 +547,7 @@ _Large language models, generative AI, neural networks, and machine learning fra
 - [palico-ai/palico-ai](https://github.com/palico-ai/palico-ai) `TypeScript` -- Build, Improve Performance, and Productionize your LLM Application with an Integrated Framework
 - [plandex-ai/plandex](https://github.com/plandex-ai/plandex) `Go` -- Open source AI coding agent. Designed for large projects and real world tasks.
 - [quelmap-inc/quelmap](https://github.com/quelmap-inc/quelmap) `TypeScript` -- Open Source Local Data Analysis Assistant.
+- [rafska/awesome-local-llm](https://github.com/rafska/awesome-local-llm)  -- A curated list of awesome platforms, tools, practices and resources that helps run LLMs locally
 - [ruvnet/midstream](https://github.com/ruvnet/midstream) `Rust` -- MidStream is a powerful platform that makes AI conversations smarter and more responsive. Instead of waiting for an AI t
 - [ruvnet/ruflo](https://github.com/ruvnet/ruflo) `TypeScript` -- 🌊 The leading agent orchestration platform for Claude. Deploy intelligent multi-agent swarms, coordinate autonomous work
 - [schmitech/orbit](https://github.com/schmitech/orbit) `Python` -- An adaptable, open-source context-aware inference engine designed for privacy, control, and independence from proprietar
@@ -561,6 +564,7 @@ _Large language models, generative AI, neural networks, and machine learning fra
 - [vanna-ai/vanna](https://github.com/vanna-ai/vanna) `Python` -- 🤖 Chat with your SQL database 📊. Accurate Text-to-SQL Generation via LLMs using Agentic Retrieval 🔄.
 - [vercel/modelfusion](https://github.com/vercel/modelfusion) `TypeScript` -- The TypeScript library for building AI applications.
 - [vgel/repeng](https://github.com/vgel/repeng) `Jupyter Notebook` -- A library for making RepE control vectors
+- [vince-lam/awesome-local-llms](https://github.com/vince-lam/awesome-local-llms)  -- Compare open-source local LLM inference projects by their metrics to assess popularity and activeness.
 - [watercrawl/WaterCrawl](https://github.com/watercrawl/WaterCrawl) `TypeScript` -- Transform Web Content into LLM-Ready Data
 - [xai-org/grok-1](https://github.com/xai-org/grok-1) `Python` -- Grok open release
 - [xai-org/grok-1](https://github.com/xai-org/grok-1) `Python` -- Grok open release
@@ -661,6 +665,7 @@ _Large language models, generative AI, neural networks, and machine learning fra
 - [CherryHQ/cherry-studio](https://github.com/CherryHQ/cherry-studio) `TypeScript` -- AI productivity studio with smart chat, autonomous agents, and 300+ assistants. Unified access to frontier LLMs
 - [Chris-bzst/ragent](https://github.com/Chris-bzst/ragent) `JavaScript` --  Claude Code in a sandboxed Docker container. Access from any   browser — your AI sees only what you give it.
 - [ComposioHQ/awesome-claude-plugins](https://github.com/ComposioHQ/awesome-claude-plugins) `JavaScript` -- A curated list of Plugins that let you extend Claude Code with custom commands, agents, hooks, and MCP servers through t
+- [ComposioHQ/awesome-claude-plugins](https://github.com/ComposioHQ/awesome-claude-plugins) `JavaScript` -- A curated list of Plugins that let you extend Claude Code with custom commands, agents, hooks, and MCP servers through t
 - [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) `Python` -- A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows
 - [ComposioHQ/composio](https://github.com/ComposioHQ/composio) `TypeScript` -- Composio powers 1000+ toolkits, tool search, context management, authentication, and a sandboxed workbench to help you b
 - [DeepMyst/Mysti](https://github.com/DeepMyst/Mysti) `TypeScript` -- AI coding dream team of agents for VS Code. Claude Code + openai Codex collaborate in brainstorm mode, debate solutions,
@@ -703,6 +708,7 @@ _Large language models, generative AI, neural networks, and machine learning fra
 - [TilmanGriesel/chipper](https://github.com/TilmanGriesel/chipper) `Python` -- ✨ AI interface for tinkerers (Ollama, Haystack RAG, Python)
 - [UmangRajpara13/Able](https://github.com/UmangRajpara13/Able) `JavaScript` -- Shared Voice Interface
 - [VibiumDev/vibium](https://github.com/VibiumDev/vibium) `Go` -- Browser automation for AI agents and humans
+- [VoltAgent/awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills)  -- Claude Code Skills and 380+ agent skills from official dev teams and the community, compatible with Codex, Antigravity, 
 - [VoltAgent/voltagent](https://github.com/VoltAgent/voltagent) `TypeScript` -- AI Agent Engineering Platform built on an Open Source TypeScript AI Agent Framework
 - [Yeachan-Heo/oh-my-claudecode](https://github.com/Yeachan-Heo/oh-my-claudecode) `TypeScript` -- Teams-first Multi-agent orchestration for Claude Code
 - [aakriti1318/multi-agent-generator](https://github.com/aakriti1318/multi-agent-generator) `Python` -- Low-code/no-code python library that transforms plain English instructions into fully configured multi-agent AI teams 
@@ -758,6 +764,7 @@ _Large language models, generative AI, neural networks, and machine learning fra
 - [dsifry/metaswarm](https://github.com/dsifry/metaswarm) `Shell` -- A self-improving multi-agent orchestration framework for Claude Code, Gemini CLI, and Codex CLI — 18 agents, 13 skills, 
 - [e2b-dev/E2B](https://github.com/e2b-dev/E2B) `MDX` -- Open-source, secure environment with real-world tools for enterprise-grade agents.
 - [e2b-dev/awesome-ai-sdks](https://github.com/e2b-dev/awesome-ai-sdks)  -- A database of SDKs, frameworks, libraries, and tools for creating, monitoring, debugging and deploying autonomous AI age
+- [elder-plinius/CL4R1T4S](https://github.com/elder-plinius/CL4R1T4S)  -- LEAKED SYSTEM PROMPTS FOR CHATGPT, GEMINI, GROK, CLAUDE, PERPLEXITY, CURSOR, DEVIN, REPLIT, AND MORE! - AI SYSTEMS TRANS
 - [endorhq/rover](https://github.com/endorhq/rover) `TypeScript` -- A manager for AI coding agents that works with Claude Code, Cursor, Gemini, Codex, and Qwen.
 - [evangelosmeklis/deepdrone](https://github.com/evangelosmeklis/deepdrone) `Python` -- Control drones with natural language
 - [fauxpilot/fauxpilot](https://github.com/fauxpilot/fauxpilot) `Python` -- FauxPilot - an open-source alternative to GitHub Copilot server
@@ -855,6 +862,7 @@ _Large language models, generative AI, neural networks, and machine learning fra
 - [ruvnet/agentic-flow](https://github.com/ruvnet/agentic-flow) `TypeScript` -- Easily switch between alternative low-cost AI models in Claude Code/Agent SDK. For those comfortable using Claude agents
 - [ruvnet/ruflo](https://github.com/ruvnet/ruflo) `TypeScript` -- 🌊 The leading agent orchestration platform for Claude. Deploy intelligent multi-agent swarms, coordinate autonomous work
 - [ryanbateman/vision-bot](https://github.com/ryanbateman/vision-bot) `CoffeeScript` -- A Hubot script for query Google's Vision API and providing an interesting response
+- [sahin/ai-rules](https://github.com/sahin/ai-rules) `Shell` -- 
 - [schmitech/orbit](https://github.com/schmitech/orbit) `Python` -- An adaptable, open-source context-aware inference engine designed for privacy, control, and independence from proprietar
 - [seite-sh/seite](https://github.com/seite-sh/seite) `Rust` -- The AI-native static site generator. One binary, one CLI — landing pages, docs, blog, changelog, and roadmap. Built for 
 - [shibing624/ChatPDF](https://github.com/shibing624/ChatPDF) `Python` -- RAG for Local LLM, chat with PDF/doc/txt files, ChatPDF. 纯原生实现RAG功能，基于本地LLM、embedding模型、reranker模型实现，支持GraphRAG，无须安装任何第三
@@ -965,6 +973,7 @@ _Blockchain, cryptocurrencies, IPFS, and decentralized protocols._
 - [fetchai/uAgents](https://github.com/fetchai/uAgents) `Python` -- A fast and lightweight framework for creating decentralized agents with ease.
 - [fiatjaf/relayer](https://github.com/fiatjaf/relayer) `Go` -- A Nostr relay server framework.
 - [filecoin-project/lassie](https://github.com/filecoin-project/lassie) `Go` -- A minimal universal retrieval client library for IPFS and Filecoin
+- [francep2p/p2p.paris](https://github.com/francep2p/p2p.paris) `CSS` -- ParisP2P official website
 - [git-bug/git-bug](https://github.com/git-bug/git-bug) `Go` -- Distributed, offline-first bug tracker embedded in git
 - [greenart7c3/Amber](https://github.com/greenart7c3/Amber) `Kotlin` -- 
 - [holepunchto/hyperdrive](https://github.com/holepunchto/hyperdrive) `JavaScript` -- Hyperdrive is a secure, real time distributed file system
@@ -977,6 +986,7 @@ _Blockchain, cryptocurrencies, IPFS, and decentralized protocols._
 - [markqvist/NomadNet](https://github.com/markqvist/NomadNet) `Python` -- Communicate Freely
 - [markqvist/Sideband](https://github.com/markqvist/Sideband) `Python` -- LXMF client for Android, Linux and macOS allowing you to communicate with people or LXMF-compatible systems over Reticul
 - [miguelfreitas/twister-core](https://github.com/miguelfreitas/twister-core) `C++` -- twister core / daemon
+- [nostr-jp/awesome-nostr-japan](https://github.com/nostr-jp/awesome-nostr-japan) `HTML` -- Awesome nostr in Japan. Software, Web service, Clients, Bots created by Japanese.
 - [nostr-protocol/nostr](https://github.com/nostr-protocol/nostr)  -- a truly censorship-resistant alternative to Twitter that has a chance of working
 - [nymtech/nym](https://github.com/nymtech/nym) `Rust` -- Nym provides strong network-level privacy against sophisticated end-to-end attackers, and anonymous transactions using b
 - [oxen-io/lokinet](https://github.com/oxen-io/lokinet) `C++` -- Lokinet is an anonymous, decentralized and IP based overlay network for the internet.
@@ -1332,6 +1342,7 @@ _Mastodon, Bluesky, ActivityPub servers, and decentralized social networks._
 - [drasticactions/FishyFlip](https://github.com/drasticactions/FishyFlip) `C#` -- Fishyflip - a .NET ATProtocol/Bluesky Library
 - [emilyliu7321/bluesky-emoji-bot](https://github.com/emilyliu7321/bluesky-emoji-bot) `JavaScript` -- 
 - [emilyliu7321/bsky-earthquake-bot](https://github.com/emilyliu7321/bsky-earthquake-bot) `JavaScript` -- 
+- [fishttp/awesome-bluesky](https://github.com/fishttp/awesome-bluesky)  -- A list of all known tools available for the Bluesky platform
 - [furSUDO/simple-atproto-handles](https://github.com/furSUDO/simple-atproto-handles) `TypeScript` -- Easily configure your own domain as a custom community handle for Bluesky using Cloudflare’s generous free tier.
 - [hipstersmoothie/skymod](https://github.com/hipstersmoothie/skymod) `TypeScript` -- A static website to browser labelers on BlueSky.
 - [hugeblank/grayhaze.live](https://github.com/hugeblank/grayhaze.live) `TypeScript` -- Live stream over ATProto
@@ -1396,6 +1407,7 @@ _Mastodon, Bluesky, ActivityPub servers, and decentralized social networks._
 - [snarfed/lexrpc](https://github.com/snarfed/lexrpc) `Python` -- Python client and server for Bluesky/AT Protocol's XRPC + Lexicon
 - [socialweb-php/atproto](https://github.com/socialweb-php/atproto) `PHP` -- A PHP library for integrating with and communicating over the AT Protocol
 - [spaghetti-source/bbc-to-bluesky](https://github.com/spaghetti-source/bbc-to-bluesky) `JavaScript` -- 
+- [stevendborrelli/bluesky-tech-starter-packs](https://github.com/stevendborrelli/bluesky-tech-starter-packs)  -- A list of tech-related Bluesky starter packs
 - [the-astrosky-ecosystem/BlueSky-Mastodon-CLI](https://github.com/the-astrosky-ecosystem/BlueSky-Mastodon-CLI) `Python` -- Basic scripts for a CLI interface to BlueSky and Mastodon
 - [the-astrosky-ecosystem/astro-ph-bots](https://github.com/the-astrosky-ecosystem/astro-ph-bots)  -- A collection of bots that post new papers added to astro-ph to Bluesky.
 - [the-astrosky-ecosystem/astronomy-feeds](https://github.com/the-astrosky-ecosystem/astronomy-feeds) `Python` -- Repo of the Astronomy feeds on Bluesky.
@@ -1651,6 +1663,7 @@ _Micropub, Microformats, personal websites, and self-hosted publishing._
 - [Airtable/airtable-gatsbyjs-blog](https://github.com/Airtable/airtable-gatsbyjs-blog) `JavaScript` -- Example GatsbyJS blog using Airtable as a CMS
 - [Automattic/fb-instant-articles](https://github.com/Automattic/fb-instant-articles) `PHP` -- Archived (see Readme). Enable Facebook Instant Articles on your WordPress site.
 - [Automattic/wp-calypso](https://github.com/Automattic/wp-calypso) `TypeScript` -- The JavaScript and API powered WordPress.com
+- [ChristopherA/LifeWithAlacrityBlog](https://github.com/ChristopherA/LifeWithAlacrityBlog) `HTML` -- The blog Life With Alacrity
 - [ClassicPress/ClassicPress](https://github.com/ClassicPress/ClassicPress) `PHP` -- The CMS for Creators. Stable. Lightweight. Instantly Familiar. Forked from WordPress.
 - [HermanMartinus/bearblog](https://github.com/HermanMartinus/bearblog) `CSS` -- Free, no-nonsense, super fast blogging.
 - [JJJ/publishiza](https://github.com/JJJ/publishiza) `PHP` -- 💩🌩 your Twitter followers from your WordPress
@@ -1688,8 +1701,10 @@ _Micropub, Microformats, personal websites, and self-hosted publishing._
 - [miguelgrinberg/microblog](https://github.com/miguelgrinberg/microblog) `Python` -- The microblogging application developed in my Flask Mega-Tutorial series. This version maps to the 2024 Edition of the t
 - [mikayla-maki/CapBlog](https://github.com/mikayla-maki/CapBlog) `Racket` -- A project with Spritely to build their blog example
 - [notenoughneon/neonblog](https://github.com/notenoughneon/neonblog) `CSS` -- Experimental indieweb blogging platform
+- [phanbook/phanbook](https://github.com/phanbook/phanbook) `PHP` -- A Q&A and Forum PHP platform
 - [prtksxna/zuari](https://github.com/prtksxna/zuari) `PHP` -- 🏞 Wordpress theme for the stream of your life
 - [rmdes/indiekit-eleventy-theme](https://github.com/rmdes/indiekit-eleventy-theme) `Nunjucks` -- Eleventy theme for Indiekit-powered IndieWeb blogs
+- [rubysherpas/forem](https://github.com/rubysherpas/forem) `Ruby` -- The best Rails 3 and Rails 4 forum engine. Ever.
 - [svandragt/docksal-boilerplate-withknown](https://github.com/svandragt/docksal-boilerplate-withknown) `Shell` -- Known CMS template for docksal
 - [tomjn/p2020](https://github.com/tomjn/p2020) `CSS` -- A self hosted fork of P2 2020, originally from https://wpcom-themes.svn.automattic.com/p2020/
 - [urre/wordpress-nginx-docker-compose](https://github.com/urre/wordpress-nginx-docker-compose) `CSS` -- Run WordPress with nginx using Docker Compose. 
@@ -2313,6 +2328,7 @@ _CI/CD, container orchestration, infrastructure-as-code, and deployment automati
 - [bluesky-social/pds](https://github.com/bluesky-social/pds) `Shell` -- Bluesky PDS (Personal Data Server) container image, compose file, and documentation
 - [borjapazr/mars-server](https://github.com/borjapazr/mars-server) `Python` -- 🏡🖥️ Managed home server with Docker, Docker Compose, Make and Bash
 - [caprover/caprover](https://github.com/caprover/caprover) `TypeScript` -- Scalable PaaS (automated Docker+nginx) - aka Heroku on Steroids
+- [cfstcyr/docker-switchboard](https://github.com/cfstcyr/docker-switchboard) `TypeScript` -- 
 - [chainguard-dev/image-comparison](https://github.com/chainguard-dev/image-comparison) `HTML` -- Comparison of Chainguard Images to others
 - [cissecodeur/generate-docker-compose-ansible-sh](https://github.com/cissecodeur/generate-docker-compose-ansible-sh) `Shell` -- 
 - [clemcer/LoggiFly](https://github.com/clemcer/LoggiFly) `Python` -- Get Alerts from your Docker Container Logs
@@ -2425,11 +2441,13 @@ _CI/CD, container orchestration, infrastructure-as-code, and deployment automati
 - [prometheus-community/prometheus-playground](https://github.com/prometheus-community/prometheus-playground) `Go` -- Turnkey sandbox projects demonstrating a wide variety of Prometheus use cases
 - [psviderski/unregistry](https://github.com/psviderski/unregistry) `Go` -- Push docker images directly to remote servers without an external registry
 - [qdm12/gluetun](https://github.com/qdm12/gluetun) `Go` -- VPN client in a thin Docker container for multiple VPN providers, written in Go, and using OpenVPN or Wireguard, DNS ove
+- [rbeer/iwdsync-docker](https://github.com/rbeer/iwdsync-docker) `Dockerfile` -- 
 - [rdsubhas/docker-tor-privoxy-alpine](https://github.com/rdsubhas/docker-tor-privoxy-alpine) `Shell` -- The smallest (15 MB!!) docker image with Tor and Privoxy on Alpine Linux
 - [realies/soulseek-docker](https://github.com/realies/soulseek-docker) `Dockerfile` -- ⛴ Soulseek Docker Container
 - [remorses/docker-phobia](https://github.com/remorses/docker-phobia) `JavaScript` -- Analyze Docker images size
 - [remorses/docker-phobia](https://github.com/remorses/docker-phobia) `JavaScript` -- Analyze Docker images size
 - [renatomefi/php-fpm-healthcheck](https://github.com/renatomefi/php-fpm-healthcheck) `Python` -- A POSIX compliant sh script to healthcheck PHP fpm status, can be used only for pinging or check for specific metrics
+- [rich0/veilid](https://github.com/rich0/veilid) `Dockerfile` -- Docker image for veilid
 - [rootless-containers/slirp4netns](https://github.com/rootless-containers/slirp4netns) `C` -- User-mode networking for unprivileged network namespaces
 - [rpardini/docker-registry-proxy](https://github.com/rpardini/docker-registry-proxy) `Shell` -- An HTTPS Proxy for Docker providing centralized configuration and caching of any registry (quay.io, DockerHub, registry.
 - [rpardini/docker-registry-proxy](https://github.com/rpardini/docker-registry-proxy) `Shell` -- An HTTPS Proxy for Docker providing centralized configuration and caching of any registry (quay.io, DockerHub, registry.
@@ -2437,6 +2455,7 @@ _CI/CD, container orchestration, infrastructure-as-code, and deployment automati
 - [rtfisher/snid_docker](https://github.com/rtfisher/snid_docker) `Shell` -- 
 - [ruanbekker/ansible-docker-swarm](https://github.com/ruanbekker/ansible-docker-swarm)  -- Initialize Docker Swarm with Ansible
 - [ruanbekker/docker-monitoring-stack-gpnc](https://github.com/ruanbekker/docker-monitoring-stack-gpnc) `Makefile` -- Grafana Prometheus Node-Exporter cAdvisor - Docker Monitoring Stack
+- [rundeck/docker-zoo](https://github.com/rundeck/docker-zoo) `Dockerfile` -- 
 - [ruoshan/autoportforward](https://github.com/ruoshan/autoportforward) `Go` -- Bidirectional port-forwarding for docker, podman and kubernetes
 - [ryanfb/docker_diffengine](https://github.com/ryanfb/docker_diffengine) `Shell` -- Dockerfile for diffengine
 - [sablierapp/sablier](https://github.com/sablierapp/sablier) `Go` -- Start your containers on demand, shut them down automatically when there's no activity. Docker, Docker Swarm Mode and Ku
@@ -2445,6 +2464,7 @@ _CI/CD, container orchestration, infrastructure-as-code, and deployment automati
 - [sameersbn/docker-postgresql](https://github.com/sameersbn/docker-postgresql) `Shell` -- Dockerfile to build a PostgreSQL container image which can be linked to other containers.
 - [schas002/ananas](https://github.com/schas002/ananas)  -- Dockerized Ananas, for hosting Mastodon bots. Also known as overseas fruit delivery.
 - [schas002/ananas](https://github.com/schas002/ananas)  -- Dockerized Ananas, for hosting Mastodon bots. Also known as overseas fruit delivery.
+- [scotthansonde/feedlandDockerCompose](https://github.com/scotthansonde/feedlandDockerCompose) `Shell` -- 
 - [scrapinghub/scrapinghub-stack-scrapy](https://github.com/scrapinghub/scrapinghub-stack-scrapy) `Dockerfile` -- Software stack with latest Scrapy and updated deps
 - [sebastianbrosch/docker-stacks-network](https://github.com/sebastianbrosch/docker-stacks-network) `Shell` -- Docker Stacks to provide various network services on a server or device with Docker Stack.
 - [sergi0g/cup](https://github.com/sergi0g/cup) `Rust` -- 🥤Docker container updates made easy
@@ -2592,6 +2612,7 @@ _CI/CD, container orchestration, infrastructure-as-code, and deployment automati
 - [nix-community/nixos-generators](https://github.com/nix-community/nixos-generators) `Nix` -- Collection of image builders [maintainer=@Lassulus]
 - [nixys/nxs-marketplace-ansible](https://github.com/nixys/nxs-marketplace-ansible) `Jinja` -- nxs-marketplace-ansible contains Ansible roles with a large amount of variables that allow you to easily deploy and conf
 - [nixys/nxs-universal-chart](https://github.com/nixys/nxs-universal-chart) `Smarty` -- The Helm chart you can use to install any of your applications into Kubernetes/OpenShift
+- [open-policy-agent/contrib](https://github.com/open-policy-agent/contrib) `Go` -- Integrations, examples, and proof-of-concepts that are not part of OPA proper.
 - [openrundev/openrun](https://github.com/openrundev/openrun) `Go` -- Internal tools deployment made easy.  Deploy web apps declaratively, on a single-node or on Kubernetes.
 - [opentofu/opentofu](https://github.com/opentofu/opentofu) `Go` -- OpenTofu lets you declaratively manage your cloud infrastructure.
 - [passbolt/passbolt-ansible-playbooks](https://github.com/passbolt/passbolt-ansible-playbooks) `Jinja` -- Install Passbolt via Ansible
@@ -2612,6 +2633,7 @@ _CI/CD, container orchestration, infrastructure-as-code, and deployment automati
 - [snyk/driftctl](https://github.com/snyk/driftctl) `Go` -- Detect, track and alert on infrastructure drift
 - [spantaleev/matrix-docker-ansible-deploy](https://github.com/spantaleev/matrix-docker-ansible-deploy) `Jinja` -- 🐳 Matrix (An open network for secure, decentralized communication) server setup using Ansible and Docker
 - [suzuki-shunsuke/tfaction](https://github.com/suzuki-shunsuke/tfaction) `TypeScript` -- Framework for Monorepo to build high level Terraform Workflows by GitHub Actions
+- [systeminit/infra-as-code-never-existed](https://github.com/systeminit/infra-as-code-never-existed) `JavaScript` -- What if infra as code never existed?
 - [theyough/vpn-deploy-playbook](https://github.com/theyough/vpn-deploy-playbook) `Shell` -- A Collection of Ansible Playbook for deploy vpn services 
 - [thomvaill/tads-boilerplate](https://github.com/thomvaill/tads-boilerplate) `Shell` -- Terraform + Ansible + Docker Swarm boilerplate = DevOps on :fire::fire::fire: | Infrastructure as Code
 - [tvories/terraform-vsphere-talos](https://github.com/tvories/terraform-vsphere-talos) `HCL` -- A Terraform module for deploying a Talos cluster on vSphere
@@ -3215,6 +3237,7 @@ _Encryption, vulnerability scanning, penetration testing, and security tools._
 - [openziti/ziti](https://github.com/openziti/ziti) `Go` -- The parent project for OpenZiti. Here you will find the executables for a fully zero trust, application embedded, progra
 - [openziti/zrok](https://github.com/openziti/zrok) `Go` -- Secure internet sharing made simple.
 - [osquery/osquery](https://github.com/osquery/osquery) `C++` -- SQL powered operating system instrumentation, monitoring, and analytics.
+- [oversecio/oversec](https://github.com/oversecio/oversec) `Java` -- 
 - [ovh/the-bastion](https://github.com/ovh/the-bastion) `Perl` -- Authentication, authorization, traceability and auditability for SSH accesses.
 - [oxen-io/lokinet](https://github.com/oxen-io/lokinet) `C++` -- Lokinet is an anonymous, decentralized and IP based overlay network for the internet.
 - [palnabarun/tor-docker](https://github.com/palnabarun/tor-docker) `Dockerfile` -- 
@@ -3644,6 +3667,7 @@ _Web servers, HTTP clients, REST APIs, and web standards._
 - [raphv/gexf-js](https://github.com/raphv/gexf-js) `JavaScript` -- A JavaScript GEXF viewer
 - [rawgraphs/rawgraphs-app](https://github.com/rawgraphs/rawgraphs-app) `JavaScript` -- A web interface to create custom vector-based visualizations on top of RAWGraphs core
 - [reactive-python/reactpy](https://github.com/reactive-python/reactpy) `Python` -- It's React, but in Python
+- [redaktor/server](https://github.com/redaktor/server) `TypeScript` -- 
 - [redsolver/feed-generator](https://github.com/redsolver/feed-generator) `TypeScript` -- 
 - [reflex-dev/reflex](https://github.com/reflex-dev/reflex) `Python` -- 🕸️ Web apps in pure Python 🐍
 - [rio-labs/rio](https://github.com/rio-labs/rio) `Python` -- WebApps in pure Python. No JavaScript, HTML and CSS needed
@@ -3667,6 +3691,8 @@ _Web servers, HTTP clients, REST APIs, and web standards._
 - [thoughtindustries/helium](https://github.com/thoughtindustries/helium) `TypeScript` -- Helium is a frontend web development framework for building highly contextual, dynamic and personalized learning experie
 - [turbolinks/turbolinks](https://github.com/turbolinks/turbolinks) `TypeScript` -- Turbolinks makes navigating your web application faster
 - [uysalemre/Python-Flask-Sqlite-RestApi-WebApp](https://github.com/uysalemre/Python-Flask-Sqlite-RestApi-WebApp) `Python` -- A cast agency web application project that manages companies and models in it. It contains Flask framework, flask_restfu
+- [v21/traceryhosting-backend](https://github.com/v21/traceryhosting-backend) `JavaScript` -- 
+- [v21/traceryhosting-frontend](https://github.com/v21/traceryhosting-frontend) `JavaScript` -- 
 - [vercel/chatbot](https://github.com/vercel/chatbot) `TypeScript` -- A full-featured, hackable Next.js AI chatbot built by Vercel
 - [victrixsoft/bashbro](https://github.com/victrixsoft/bashbro) `Shell` -- A Bash-based web file browser. Allowing you to browse, view and transfer files via your web browser.
 - [victrixsoft/bashbro](https://github.com/victrixsoft/bashbro) `Shell` -- A Bash-based web file browser. Allowing you to browse, view and transfer files via your web browser.
@@ -3720,6 +3746,7 @@ _Web servers, HTTP clients, REST APIs, and web standards._
 - [coddingtonbear/obsidian-local-rest-api](https://github.com/coddingtonbear/obsidian-local-rest-api) `TypeScript` -- Unlock your automation needs by interacting with your notes in Obsidian over a secure REST API.
 - [container-registry/harbor-api-client](https://github.com/container-registry/harbor-api-client) `Python` -- Interact with your Harbor Container Registry using Python
 - [containers/podman-py](https://github.com/containers/podman-py) `Python` -- Python bindings for Podman's RESTful API
+- [cyberboysumanjay/APIs](https://github.com/cyberboysumanjay/APIs)  -- This Repository contains link to many Open or Closed Source APIs which I've made
 - [datadesk/p2p-python](https://github.com/datadesk/p2p-python) `Python` -- Wrapper for Tribune's Content Services API
 - [desmondmorris/node-twitter](https://github.com/desmondmorris/node-twitter) `JavaScript` -- Client library for the Twitter REST and Streaming API's.
 - [dmitry575/ProxyTor](https://github.com/dmitry575/ProxyTor) `C#` -- HTTP proxy using only one port and request moved through the many tors instants
@@ -3987,6 +4014,7 @@ _Static site generators, JAMstack frameworks, and site optimizers._
 ### Jamstack Templates
 
 - [Airtable/airtable-gatsbyjs-blog](https://github.com/Airtable/airtable-gatsbyjs-blog) `JavaScript` -- Example GatsbyJS blog using Airtable as a CMS
+- [Automattic/_s](https://github.com/Automattic/_s) `CSS` -- Inactive project – please visit https://themeshaper.com/block-themes/ to learn more about the future of WordPress themes
 - [DimiMikadze/fest](https://github.com/DimiMikadze/fest) `TypeScript` -- SaaS boilerplate built with Node.js & React.
 - [MWDelaney/ZeroPoint](https://github.com/MWDelaney/ZeroPoint) `JavaScript` -- A modern, opinionated, bare-bones Jamstack starter using Eleventy to get "up to zero" on a project quickly and easily. h
 - [Pitayan/gatsby-theme-pitayan](https://github.com/Pitayan/gatsby-theme-pitayan) `TypeScript` -- A minimal blog theme plugin for Gatsby
@@ -4499,6 +4527,7 @@ _Search engines, vector databases, data visualization, and analytics._
 - [brennanbrown/weeks](https://github.com/brennanbrown/weeks) `HTML` -- 📅 A visualization of a life in weeks, tracking meaningful events and the passage of time. Each week is a small box, mark
 - [briefercloud/briefer](https://github.com/briefercloud/briefer) `TypeScript` -- Dashboards and notebooks in a single place. Create powerful and flexible dashboards using code, or build beautiful Notio
 - [bwatt-fr/Interface_Sigmajs](https://github.com/bwatt-fr/Interface_Sigmajs) `JavaScript` -- This is an interface based on sigmajs in order to easily visualize a gexf.
+- [chartjs/awesome](https://github.com/chartjs/awesome)  -- A curated list of awesome Chart.js resources and libraries
 - [chemicstry/recksplorer](https://github.com/chemicstry/recksplorer) `JavaScript` -- Lightning Network Explorer
 - [constellation-app/constellation](https://github.com/constellation-app/constellation) `Java` -- A graph-focused data visualisation and interactive analysis application.
 - [controversial/wikipedia-map](https://github.com/controversial/wikipedia-map) `JavaScript` -- A web app for visualizing the connections between Wikipedia pages.
@@ -4674,6 +4703,7 @@ _Search engines, vector databases, data visualization, and analytics._
 - [gephi/graphstore](https://github.com/gephi/graphstore) `Java` -- Fast in-memory graph structure, powering Gephi
 - [ginatrapani/narrowthegap](https://github.com/ginatrapani/narrowthegap) `JavaScript` -- 🇺🇸 💵 📊 See the gender pay gap by occupation.
 - [harlowclausen/Messenger-Analytics](https://github.com/harlowclausen/Messenger-Analytics) `Python` -- A python project to interpret and explore Facebook Messenger JSON files
+- [idno/FooterJS](https://github.com/idno/FooterJS) `PHP` -- Allows you to paste analytics code or other Javascript at the bottom of your Known site pages
 - [johnniedanielsaint/Top-100-YouTube-Channel](https://github.com/johnniedanielsaint/Top-100-YouTube-Channel) `Jupyter Notebook` -- This dataset showcases the top 100 YouTube channels in 2024, including key metrics such as subscribers, total views, and
 - [justb4/docker-awstats](https://github.com/justb4/docker-awstats) `Shell` -- Docker Image for awstats http://www.awstats.org an Open Source log analyzer and (web) statistics package
 - [kayak/fireant](https://github.com/kayak/fireant) `Python` -- Data analysis and reporting tool for quick access to custom charts and tables in Jupyter Notebooks and in the shell.
@@ -5093,6 +5123,7 @@ _Desktop applications, UI frameworks, icon packs, and window managers._
 - [rancher/ui](https://github.com/rancher/ui) `JavaScript` -- Rancher UI
 - [rclone/rclone-webui-react](https://github.com/rclone/rclone-webui-react) `JavaScript` -- A full fledged UI for the rclone cloud sync tool
 - [reactive-python/reactpy](https://github.com/reactive-python/reactpy) `Python` -- It's React, but in Python
+- [redaktor/widgets-preview](https://github.com/redaktor/widgets-preview) `TypeScript` -- 
 - [rhysd/tui-textarea](https://github.com/rhysd/tui-textarea) `Rust` -- Simple yet powerful multi-line text editor widget for ratatui and tui-rs
 - [ri0t/bootstrap-switch](https://github.com/ri0t/bootstrap-switch) `HTML` -- Turn checkboxes and radio buttons in toggle switches.
 - [rivo/tview](https://github.com/rivo/tview) `Go` -- Terminal UI library with rich, interactive widgets — written in Golang
@@ -5148,6 +5179,7 @@ _Desktop applications, UI frameworks, icon packs, and window managers._
 - [getblocklab/block-lab](https://github.com/getblocklab/block-lab) `PHP` -- A WordPress Admin interface and a simple templating system for building custom Gutenberg blocks.
 - [giniedp/ampache-bootstrapped-theme](https://github.com/giniedp/ampache-bootstrapped-theme) `CSS` -- Ampache theme built with twitters bootstrap framework
 - [giniedp/ampache-bootstrapped-theme](https://github.com/giniedp/ampache-bootstrapped-theme) `CSS` -- Ampache theme built with twitters bootstrap framework
+- [goabstract/Awesome-Design-Tools](https://github.com/goabstract/Awesome-Design-Tools) `JavaScript` -- The best design tools and plugins for everything 👉
 - [godaddy-wordpress/primer](https://github.com/godaddy-wordpress/primer) `CSS` -- Primer is a powerful theme that brings clarity to your content in a fresh design. This is the parent for all themes in t
 - [godaddy-wordpress/primer](https://github.com/godaddy-wordpress/primer) `CSS` -- Primer is a powerful theme that brings clarity to your content in a fresh design. This is the parent for all themes in t
 - [hug-sun/element3](https://github.com/hug-sun/element3) `JavaScript` -- A Vue.js 3.0 UI Toolkit for IT Education. Build with JS&TS
@@ -6624,6 +6656,7 @@ _Task automation, workflow engines, and orchestration platforms._
 - [spences10/twitter-bot-bootstrap](https://github.com/spences10/twitter-bot-bootstrap) `JavaScript` -- Twitter bot bootstrap :boot: using node and twit :bird:
 - [sreyan-ghosh/parsemail](https://github.com/sreyan-ghosh/parsemail) `Python` -- send bulk emails from excel files
 - [sreyan-ghosh/parsemail](https://github.com/sreyan-ghosh/parsemail) `Python` -- send bulk emails from excel files
+- [ssalevan/habibots](https://github.com/ssalevan/habibots) `JavaScript` -- Repository for building in-world Habitat bots
 - [supratims/twitter-news-bot](https://github.com/supratims/twitter-news-bot) `JavaScript` -- A simple news bot to crawl twitter using node
 - [sysengquick/ansible](https://github.com/sysengquick/ansible) `Python` -- Ansible tutorial repo files
 - [target/goalert](https://github.com/target/goalert) `Go` -- Open source on-call scheduling, automated escalations, and notifications so you never miss a critical alert
@@ -8321,6 +8354,7 @@ _Image processing, video editing, audio tools, and media utilities._
 - [tepreece/drumscript](https://github.com/tepreece/drumscript) `Go` -- A simple MIDI drum machine scripting language
 - [tepreece/drumscript](https://github.com/tepreece/drumscript) `Go` -- A simple MIDI drum machine scripting language
 - [tiagolr/ripplerx](https://github.com/tiagolr/ripplerx) `C++` -- A physically modeled synth
+- [voicerepublic/voicerepublic_dev](https://github.com/voicerepublic/voicerepublic_dev) `JavaScript` -- VoiceRepublic https://voicerepublic.com
 - [x1ppy/freezetag](https://github.com/x1ppy/freezetag) `Python` -- save, strip, and restore file paths and music metadata
 - [yt-dlp/yt-dlp](https://github.com/yt-dlp/yt-dlp) `Python` -- A feature-rich command-line audio/video downloader
 - [zrythm/zrythm](https://github.com/zrythm/zrythm) `C++` -- a highly automated and intuitive digital audio workstation - official mirror
@@ -9871,6 +9905,7 @@ _Self-hosted applications, home automation, and personal servers._
 - [cyberboysumanjay/TorrFlix](https://github.com/cyberboysumanjay/TorrFlix) `Python` -- A simple torrent streamer written in python.
 - [cyberboysumanjay/TorrFlix](https://github.com/cyberboysumanjay/TorrFlix) `Python` -- A simple torrent streamer written in python.
 - [datarhei/restreamer](https://github.com/datarhei/restreamer) `HTML` -- The Restreamer is a complete streaming server solution for self-hosting. It has a visually appealing user interface and 
+- [doingodswork/awesome-stremio](https://github.com/doingodswork/awesome-stremio)  -- A curated list of awesome tools and addons for Stremio
 - [dz0ny/leapcast](https://github.com/dz0ny/leapcast) `Python` -- ChromeCast emulation app for any device
 - [electerious/Lychee](https://github.com/electerious/Lychee) `PHP` -- A great looking and easy-to-use photo-management-system you can run on your server, to manage and share photos.
 - [ennuicastr/ennuicastr-server](https://github.com/ennuicastr/ennuicastr-server) `JavaScript` -- The server for Ennuicastr ( https://ecastr.com/ )
@@ -10234,11 +10269,8 @@ _Email clients, calendar management, and contact management._
 _Repos that don't fit neatly into any other category._
 
 - [0x3lau/deep-house-techno](https://github.com/0x3lau/deep-house-techno)  -- 
-- [Automattic/_s](https://github.com/Automattic/_s) `CSS` -- Inactive project – please visit https://themeshaper.com/block-themes/ to learn more about the future of WordPress themes
 - [AxelPatron/BotTheFlag](https://github.com/AxelPatron/BotTheFlag) `Python` -- 
-- [ChristopherA/LifeWithAlacrityBlog](https://github.com/ChristopherA/LifeWithAlacrityBlog) `HTML` -- The blog Life With Alacrity
 - [ClearskyApp06/clearskyservices](https://github.com/ClearskyApp06/clearskyservices)  -- Clearsky Services API
-- [ComposioHQ/awesome-claude-plugins](https://github.com/ComposioHQ/awesome-claude-plugins) `JavaScript` -- A curated list of Plugins that let you extend Claude Code with custom commands, agents, hooks, and MCP servers through t
 - [Em-AK/makesense_jobs](https://github.com/Em-AK/makesense_jobs) `Ruby` -- My first rails app ever ... still visited by hundreds daily. REPO MOVED TO https://github.com/makesense/makesense_jobs
 - [GuillaumeDerval/rlp](https://github.com/GuillaumeDerval/rlp) `Python` -- 
 - [Igglybuff/awesome-piracy](https://github.com/Igglybuff/awesome-piracy) `HTML` -- A curated list of awesome warez and piracy links
@@ -10246,27 +10278,16 @@ _Repos that don't fit neatly into any other category._
 - [Netzfreiheit/SaveTheInternet](https://github.com/Netzfreiheit/SaveTheInternet) `HTML` -- european campaign website to protect the free and neutral internet
 - [OpenDolphin/backend](https://github.com/OpenDolphin/backend) `Go` -- 
 - [PlotNotes/plotnotes](https://github.com/PlotNotes/plotnotes) `JavaScript` -- 
-- [Shubhamsaboo/awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps) `Python` -- Collection of awesome LLM apps with AI Agents and RAG using OpenAI, Anthropic, Gemini and opensource models.
-- [VoltAgent/awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills)  -- Claude Code Skills and 380+ agent skills from official dev teams and the community, compatible with Codex, Antigravity, 
 - [YoussF/notes](https://github.com/YoussF/notes)  -- 
 - [amoose/smarty-pants](https://github.com/amoose/smarty-pants) `CoffeeScript` -- The newest government employee
 - [blueskyCommunity/aozora](https://github.com/blueskyCommunity/aozora) `JavaScript` -- 
 - [brianflanagan/EurogroupIdeas](https://github.com/brianflanagan/EurogroupIdeas) `Ruby` -- A simple bot capable of complex neo-liberal economics.
 - [captn3m0/ideas](https://github.com/captn3m0/ideas) `Makefile` -- :rocket: Ideas for everyone under a CC licence. Feel free to use. I'll send you a postcard if you build anything on this
-- [cfstcyr/docker-switchboard](https://github.com/cfstcyr/docker-switchboard) `TypeScript` -- 
-- [chartjs/awesome](https://github.com/chartjs/awesome)  -- A curated list of awesome Chart.js resources and libraries
 - [conradbez/hstream](https://github.com/conradbez/hstream) `Python` -- Hyper Stream
-- [cyberboysumanjay/APIs](https://github.com/cyberboysumanjay/APIs)  -- This Repository contains link to many Open or Closed Source APIs which I've made
 - [dani3l0/Statee](https://github.com/dani3l0/Statee) `Go` -- 
 - [devsentient/examples](https://github.com/devsentient/examples) `Jupyter Notebook` -- example code for demoing features
-- [doingodswork/awesome-stremio](https://github.com/doingodswork/awesome-stremio)  -- A curated list of awesome tools and addons for Stremio
 - [dominictarr/yap](https://github.com/dominictarr/yap) `JavaScript` -- 
-- [elder-plinius/CL4R1T4S](https://github.com/elder-plinius/CL4R1T4S)  -- LEAKED SYSTEM PROMPTS FOR CHATGPT, GEMINI, GROK, CLAUDE, PERPLEXITY, CURSOR, DEVIN, REPLIT, AND MORE! - AI SYSTEMS TRANS
-- [fishttp/awesome-bluesky](https://github.com/fishttp/awesome-bluesky)  -- A list of all known tools available for the Bluesky platform
-- [francep2p/p2p.paris](https://github.com/francep2p/p2p.paris) `CSS` -- ParisP2P official website
-- [goabstract/Awesome-Design-Tools](https://github.com/goabstract/Awesome-Design-Tools) `JavaScript` -- The best design tools and plugins for everything 👉
 - [hyprland-community/awesome-hyprland](https://github.com/hyprland-community/awesome-hyprland)  -- Awesome list for Hyprland [maintainer=@yavko]
-- [idno/FooterJS](https://github.com/idno/FooterJS) `PHP` -- Allows you to paste analytics code or other Javascript at the bottom of your Known site pages
 - [ikalnytskyi/dotfiles](https://github.com/ikalnytskyi/dotfiles) `Lua` -- Ihor Kalnytskyi's personal dotfiles.
 - [inolen/quakejs](https://github.com/inolen/quakejs) `JavaScript` -- 
 - [itsrealranky/ghostclaw](https://github.com/itsrealranky/ghostclaw) `C++` -- Grandfather of Openclaw
@@ -10277,37 +10298,16 @@ _Repos that don't fit neatly into any other category._
 - [klange/toaruos](https://github.com/klange/toaruos) `C` -- A completely-from-scratch hobby operating system: bootloader, kernel, drivers, C library, and userspace including a comp
 - [lippertmarkus/presentations](https://github.com/lippertmarkus/presentations) `Jupyter Notebook` -- 
 - [lokesh-krishna/dotfiles](https://github.com/lokesh-krishna/dotfiles) `HTML` -- My dotfiles
-- [nostr-jp/awesome-nostr-japan](https://github.com/nostr-jp/awesome-nostr-japan) `HTML` -- Awesome nostr in Japan. Software, Web service, Clients, Bots created by Japanese.
 - [numericninja/numericninja.github.io](https://github.com/numericninja/numericninja.github.io) `HTML` -- 
-- [open-policy-agent/contrib](https://github.com/open-policy-agent/contrib) `Go` -- Integrations, examples, and proof-of-concepts that are not part of OPA proper.
-- [oversecio/oversec](https://github.com/oversecio/oversec) `Java` -- 
 - [pablopareja/Neo4jAWS](https://github.com/pablopareja/Neo4jAWS)  -- 
-- [phanbook/phanbook](https://github.com/phanbook/phanbook) `PHP` -- A Q&A and Forum PHP platform
 - [raclepoulpe/VoyageDuHerosDelIT](https://github.com/raclepoulpe/VoyageDuHerosDelIT)  -- References du talk "Le Voyage du Héros de l'IT"
-- [rafska/awesome-local-llm](https://github.com/rafska/awesome-local-llm)  -- A curated list of awesome platforms, tools, practices and resources that helps run LLMs locally
-- [rbeer/iwdsync-docker](https://github.com/rbeer/iwdsync-docker) `Dockerfile` -- 
-- [redaktor/server](https://github.com/redaktor/server) `TypeScript` -- 
-- [redaktor/widgets-preview](https://github.com/redaktor/widgets-preview) `TypeScript` -- 
-- [rich0/veilid](https://github.com/rich0/veilid) `Dockerfile` -- Docker image for veilid
 - [row-engineering/everything](https://github.com/row-engineering/everything) `HTML` -- 
-- [rubysherpas/forem](https://github.com/rubysherpas/forem) `Ruby` -- The best Rails 3 and Rails 4 forum engine. Ever.
-- [rundeck/docker-zoo](https://github.com/rundeck/docker-zoo) `Dockerfile` -- 
-- [sahin/ai-rules](https://github.com/sahin/ai-rules) `Shell` -- 
 - [saturn-abhishek/awesome-github-profile-readme](https://github.com/saturn-abhishek/awesome-github-profile-readme)  -- 😎 A curated list of awesome GitHub Profile which updates in real time 
-- [scotthansonde/feedlandDockerCompose](https://github.com/scotthansonde/feedlandDockerCompose) `Shell` -- 
 - [segmentationf4u1t/trae_telemetry_research](https://github.com/segmentationf4u1t/trae_telemetry_research)  -- 
-- [ssalevan/habibots](https://github.com/ssalevan/habibots) `JavaScript` -- Repository for building in-world Habitat bots
 - [stanfordio/Pyrler](https://github.com/stanfordio/Pyrler) `Python` -- 
-- [stevendborrelli/bluesky-tech-starter-packs](https://github.com/stevendborrelli/bluesky-tech-starter-packs)  -- A list of tech-related Bluesky starter packs
-- [systeminit/infra-as-code-never-existed](https://github.com/systeminit/infra-as-code-never-existed) `JavaScript` -- What if infra as code never existed?
-- [tankvn/awesome-ai-tools](https://github.com/tankvn/awesome-ai-tools)  -- A curated list of 7766 awesome AI tools
 - [trunks-social/trunks-public](https://github.com/trunks-social/trunks-public)  -- Issue tracker project
 - [v21/tracerybot](https://github.com/v21/tracerybot) `JavaScript` -- 
-- [v21/traceryhosting-backend](https://github.com/v21/traceryhosting-backend) `JavaScript` -- 
-- [v21/traceryhosting-frontend](https://github.com/v21/traceryhosting-frontend) `JavaScript` -- 
 - [valu-digital/ptv-for-wordpress](https://github.com/valu-digital/ptv-for-wordpress) `PHP` -- PTV for WordPress
-- [vince-lam/awesome-local-llms](https://github.com/vince-lam/awesome-local-llms)  -- Compare open-source local LLM inference projects by their metrics to assess popularity and activeness.
-- [voicerepublic/voicerepublic_dev](https://github.com/voicerepublic/voicerepublic_dev) `JavaScript` -- VoiceRepublic https://voicerepublic.com
 - [wierdbytes/cc-wiretap](https://github.com/wierdbytes/cc-wiretap) `TypeScript` -- 
 - [yaelwrites/Big-Ass-Data-Broker-Opt-Out-List](https://github.com/yaelwrites/Big-Ass-Data-Broker-Opt-Out-List)  -- 
 - [zellij-org/awesome-zellij](https://github.com/zellij-org/awesome-zellij)  --  A list of awesome resources for zellij
