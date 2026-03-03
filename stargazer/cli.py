@@ -130,32 +130,48 @@ def publish(
             raise typer.Exit(1)
 
         mgr = GitHubListsManager(token=token, delay=delay)
-        top_slugs = GitHubListsManager.pick_top_categories(classifications, limit=32)
+        taxonomy_data = taxonomy_mgr.data
+        # Reserve 1 slot for Misc, pick top 31 parent categories
+        top_slugs = GitHubListsManager.pick_top_categories(
+            classifications, taxonomy=taxonomy_data, limit=31,
+        )
 
         if resume:
             existing = mgr.get_existing_lists()
             name_to_id = {lst["name"]: lst["id"] for lst in existing}
-            cats = {c["slug"]: c for c in taxonomy_mgr.data["categories"]}
+            cats = {c["slug"]: c for c in taxonomy_data["categories"]}
             list_ids = {}
             for slug in top_slugs:
                 cat_name = cats.get(slug, {}).get("name", slug)
                 if cat_name in name_to_id:
                     list_ids[slug] = name_to_id[cat_name]
+            misc_list_id = name_to_id.get("Misc")
             console.print(f"[green]Resuming:[/] Found {len(list_ids)}/{len(top_slugs)} existing lists")
         else:
-            console.print(f"\n[bold]Top 32 categories for GitHub Lists:[/]")
+            console.print(f"\n[bold]Top 31 categories + Misc for GitHub Lists:[/]")
             for i, slug in enumerate(top_slugs, 1):
                 console.print(f"  {i:2d}. {slug}")
+            console.print(f"  32. [dim]Misc (catch-all for remaining repos)[/]")
 
             if not typer.confirm("\nProceed? This will DELETE all existing lists and create new ones."):
                 raise typer.Exit(0)
 
             mgr.delete_all_lists()
-            list_ids = mgr.create_lists(taxonomy_mgr.data, top_slugs)
+            list_ids = mgr.create_lists(taxonomy_data, top_slugs)
+            # Create Misc list for everything else
+            misc_data = mgr._graphql(
+                "mutation($name: String!, $description: String) { createUserList(input: {name: $name, description: $description, isPrivate: false}) { list { id } } }",
+                {"name": "Misc", "description": "Repos that don't fit neatly into the top categories."},
+            )
+            misc_list_id = misc_data["data"]["createUserList"]["list"]["id"]
+            console.print("  Created: Misc")
 
-        assignments = GitHubListsManager.build_assignments(classifications, stars, list_ids)
+        assignments = GitHubListsManager.build_assignments(
+            classifications, stars, list_ids,
+            taxonomy=taxonomy_data, misc_list_id=misc_list_id,
+        )
         mgr.assign_repos(assignments)
-        console.print(f"[green]Lists updated![/] {len(assignments)} repos assigned to {len(list_ids)} lists")
+        console.print(f"[green]Lists updated![/] {len(assignments)} repos assigned to {len(list_ids) + 1} lists")
 
     # README
     readme = render_readme(taxonomy_mgr.data, stars, classifications)

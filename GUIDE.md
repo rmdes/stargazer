@@ -76,7 +76,7 @@ Options:
 uv run stargazer publish
 ```
 
-Creates GitHub Lists (top 32 categories) and generates the README.
+Creates GitHub Lists (top 31 parent categories + Misc catch-all) and generates the README. Subcategories roll up to their parent list, so every starred repo ends up in a list.
 
 Options:
 - `--delay 3.0` — seconds between GitHub mutations (default: 1.0, recommend 3.0 for large collections)

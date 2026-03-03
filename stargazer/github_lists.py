@@ -138,10 +138,26 @@ class GitHubListsManager:
             console.print(f"  [yellow]{failed} repos failed to assign (transient errors)[/]")
 
     @staticmethod
-    def pick_top_categories(classifications: dict[str, dict], limit: int = 32) -> list[str]:
+    def _child_to_parent(taxonomy: dict) -> dict[str, str]:
+        """Build subcategory slug → parent slug mapping."""
+        mapping = {}
+        for cat in taxonomy.get("categories", []):
+            for sub in cat.get("subcategories", []):
+                mapping[sub["slug"]] = cat["slug"]
+        return mapping
+
+    @staticmethod
+    def pick_top_categories(
+        classifications: dict[str, dict],
+        limit: int = 32,
+        taxonomy: dict | None = None,
+    ) -> list[str]:
+        child_map = GitHubListsManager._child_to_parent(taxonomy) if taxonomy else {}
         counter = Counter()
         for cls in classifications.values():
-            counter[cls["primary"]] += 1
+            slug = cls["primary"]
+            slug = child_map.get(slug, slug)
+            counter[slug] += 1
         return [slug for slug, _ in counter.most_common(limit)]
 
     @staticmethod
@@ -149,14 +165,21 @@ class GitHubListsManager:
         classifications: dict[str, dict],
         stars: list[dict],
         list_ids: dict[str, str],
+        taxonomy: dict | None = None,
+        misc_list_id: str | None = None,
     ) -> dict[str, list[str]]:
+        child_map = GitHubListsManager._child_to_parent(taxonomy) if taxonomy else {}
         name_to_node = {s["full_name"]: s["node_id"] for s in stars}
         assignments = {}
         for full_name, cls in classifications.items():
             node_id = name_to_node.get(full_name)
             if not node_id:
                 continue
-            primary_list = list_ids.get(cls["primary"])
-            if primary_list:
-                assignments[node_id] = [primary_list]
+            slug = cls["primary"]
+            # Try direct match, then parent rollup, then misc
+            target = list_ids.get(slug) or list_ids.get(child_map.get(slug, ""))
+            if not target and misc_list_id:
+                target = misc_list_id
+            if target:
+                assignments[node_id] = [target]
         return assignments
