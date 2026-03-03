@@ -30,12 +30,16 @@ Return ONLY valid JSON (no markdown, no explanation):
 }}"""
 
 
+DEFAULT_CATEGORY = "uncategorized"
+
+
 class Classifier:
     def __init__(self, api_key: str, taxonomy: dict, batch_size: int = 20, delay: float = 2.0):
         self.client = anthropic.Anthropic(api_key=api_key)
         self.taxonomy = taxonomy
         self.batch_size = batch_size
         self.limiter = RateLimiter(min_delay=delay)
+        self._valid_slugs = TaxonomyManager(taxonomy).all_slugs()
 
     def classify_all(self, stars: list[dict], full: bool = False) -> dict[str, dict]:
         existing = {} if full else self._load_existing()
@@ -61,9 +65,13 @@ class Classifier:
                 results = self._parse_response(response)
 
                 for result in results:
+                    primary = result["primary"]
+                    if primary not in self._valid_slugs:
+                        primary = DEFAULT_CATEGORY
+                    secondary = [s for s in result.get("secondary", []) if s in self._valid_slugs]
                     existing[result["full_name"]] = {
-                        "primary": result["primary"],
-                        "secondary": result.get("secondary", []),
+                        "primary": primary,
+                        "secondary": secondary,
                     }
 
                 progress.advance(task, advance=len(batch))
@@ -102,3 +110,17 @@ class Classifier:
     def _save(self, classifications: dict[str, dict]):
         DATA_DIR.mkdir(exist_ok=True)
         CLASSIFICATIONS_FILE.write_text(json.dumps(classifications, indent=2))
+
+
+def ensure_default_category(taxonomy: dict) -> bool:
+    """Add the default 'uncategorized' category if missing. Returns True if added."""
+    slugs = {cat["slug"] for cat in taxonomy["categories"]}
+    if DEFAULT_CATEGORY in slugs:
+        return False
+    taxonomy["categories"].append({
+        "name": "Uncategorized",
+        "slug": DEFAULT_CATEGORY,
+        "description": "Repos that don't fit neatly into any other category.",
+        "subcategories": [],
+    })
+    return True

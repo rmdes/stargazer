@@ -32,9 +32,15 @@ REPO2 = {
 }
 
 
-def test_build_audit_prompt_includes_current_classification():
+def _make_auditor():
     auditor = Auditor.__new__(Auditor)
     auditor.taxonomy = TAXONOMY
+    auditor._valid_slugs = {"ai", "llm", "web", "devops"}
+    return auditor
+
+
+def test_build_audit_prompt_includes_current_classification():
+    auditor = _make_auditor()
     classifications = {
         "user/llm-tool": {"primary": "web", "secondary": []},
     }
@@ -45,8 +51,7 @@ def test_build_audit_prompt_includes_current_classification():
 
 
 def test_build_audit_prompt_multiple_repos():
-    auditor = Auditor.__new__(Auditor)
-    auditor.taxonomy = TAXONOMY
+    auditor = _make_auditor()
     classifications = {
         "user/llm-tool": {"primary": "ai", "secondary": ["llm"]},
         "org/web-framework": {"primary": "web", "secondary": []},
@@ -57,6 +62,7 @@ def test_build_audit_prompt_multiple_repos():
 
 
 def test_parse_audit_response_returns_disagreements():
+    auditor = _make_auditor()
     raw = json.dumps({
         "audits": [
             {
@@ -71,7 +77,7 @@ def test_parse_audit_response_returns_disagreements():
             },
         ]
     })
-    result = Auditor._parse_audit_response(raw)
+    result = auditor._parse_audit_response(raw)
     assert len(result) == 1
     assert result[0]["full_name"] == "user/llm-tool"
     assert result[0]["suggested_primary"] == "llm"
@@ -79,23 +85,49 @@ def test_parse_audit_response_returns_disagreements():
 
 
 def test_parse_audit_response_handles_markdown_fences():
+    auditor = _make_auditor()
     raw = '```json\n' + json.dumps({
         "audits": [
             {"full_name": "user/llm-tool", "correct": False,
              "suggested_primary": "ai", "reason": "Wrong category"},
         ]
     }) + '\n```'
-    result = Auditor._parse_audit_response(raw)
+    result = auditor._parse_audit_response(raw)
     assert len(result) == 1
     assert result[0]["suggested_primary"] == "ai"
 
 
 def test_parse_audit_all_correct_returns_empty():
+    auditor = _make_auditor()
     raw = json.dumps({
         "audits": [
             {"full_name": "user/llm-tool", "correct": True},
             {"full_name": "org/web-framework", "correct": True},
         ]
     })
-    result = Auditor._parse_audit_response(raw)
+    result = auditor._parse_audit_response(raw)
     assert result == []
+
+
+def test_parse_audit_response_drops_invalid_suggested_slug():
+    auditor = _make_auditor()
+    raw = json.dumps({
+        "audits": [
+            {
+                "full_name": "user/llm-tool",
+                "correct": False,
+                "suggested_primary": "invented-slug",
+                "reason": "Some reason",
+            },
+            {
+                "full_name": "org/web-framework",
+                "correct": False,
+                "suggested_primary": "devops",
+                "reason": "Valid suggestion",
+            },
+        ]
+    })
+    result = auditor._parse_audit_response(raw)
+    assert len(result) == 1
+    assert result[0]["full_name"] == "org/web-framework"
+    assert result[0]["suggested_primary"] == "devops"

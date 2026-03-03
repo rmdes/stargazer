@@ -44,6 +44,7 @@ class Auditor:
         self.taxonomy = taxonomy
         self.batch_size = batch_size
         self.limiter = RateLimiter(min_delay=delay)
+        self._valid_slugs = TaxonomyManager(taxonomy).all_slugs()
 
     def audit_repos(self, repos: list[dict], classifications: dict[str, dict]) -> list[dict]:
         """Audit repos in batches, return list of disagreements."""
@@ -96,13 +97,16 @@ class Auditor:
         )
         return message.content[0].text
 
-    @staticmethod
-    def _parse_audit_response(text: str) -> list[dict]:
+    def _parse_audit_response(self, text: str) -> list[dict]:
         text = text.strip()
         if text.startswith("```"):
             text = text.split("\n", 1)[1].rsplit("```", 1)[0]
         data = json.loads(text)
-        return [a for a in data["audits"] if not a.get("correct", True)]
+        return [
+            a for a in data["audits"]
+            if not a.get("correct", True)
+            and a.get("suggested_primary") in self._valid_slugs
+        ]
 
 
 def review_disagreements(

@@ -600,6 +600,12 @@
           "slug": "email-servers"
         }
       ]
+    },
+    {
+      "name": "Uncategorized",
+      "slug": "uncategorized",
+      "description": "Repos that don't fit neatly into any other category.",
+      "subcategories": []
     }
   ]
 }

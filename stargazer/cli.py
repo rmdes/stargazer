@@ -80,7 +80,12 @@ def classify(
     else:
         console.print(f"[green]Using existing taxonomy[/] ({len(taxonomy_mgr.top_level_names())} categories)")
 
-    # Step 2: Classify all repos
+    # Step 2: Ensure default category exists for unclassifiable repos
+    from stargazer.classifier import ensure_default_category
+    if ensure_default_category(taxonomy_mgr.data):
+        taxonomy_mgr.save()
+
+    # Step 3: Classify all repos
     classifier = Classifier(
         api_key=api_key,
         taxonomy=taxonomy_mgr.data,
